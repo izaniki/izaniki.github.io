@@ -1,102 +1,114 @@
-/* --- FFXI / PlayOnline Color Palette --- */
 :root {
-  --po-blue-dark: #050a14;
-  --po-blue-light: #162f4b;
-  --dialogue-bg: rgba(6, 15, 34, 0.85);
+  /* FFXI Palette (Updated) */
+  --po-blue-dark: #030810;
+  --po-blue-light: #0d2a45;
+  --dialogue-bg: rgba(6, 15, 34, 0.9);
   --border-gold: #b39b59;
   --border-gold-light: #dfc881;
   --text-main: #d3dde6;
   --text-title: #fce89d;
   --link-color: #5b9edb;
   --link-hover: #ffffff;
-  --system-text: #ff8e8e; /* Classic red system message */
+  --system-text: #ff8e8e;
+  
+  /* NEW Windurst Theme Colors and Assets */
+  --windurst-green: #29805e; /* Vibrant forest green */
+  
+  /* Example assets as Data URIs for convenience (SVG code) */
+  /* A stylized scroll border-image example */
+  --border-img-url: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><g stroke="%23b39b59" stroke-width="2" fill="none"><path d="M10,10 Q50,0 90,10 T90,90 Q50,100 10,90 T10,10 M5,5 V95 H95 V5 Z M30,10 Q50,5 70,10" /></g><circle cx="5" cy="5" r="5" fill="%23b39b59"/><circle cx="95" cy="5" r="5" fill="%23b39b59"/><circle cx="5" cy="95" r="5" fill="%23b39b59"/><circle cx="95" cy="95" r="5" fill="%23b39b59"/></svg>');
+  /* A stylized leaf corner asset */
+  --leaf-img-url: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path fill="%23b39b59" d="M10,25 Q25,10 40,25 Q25,40 10,25 M25,25 V40 H40 V25 M25,25 V10 H40 V25" /><path fill="%2329805e" d="M15,25 Q25,18 35,25 Q25,32 15,25" /></svg>');
 }
 
 /* --- Global Styles --- */
 body {
   margin: 0;
   padding: 0;
-  /* Deep gradient background reminiscent of PlayOnline / FFXI skies */
-  background: radial-gradient(circle at top center, var(--po-blue-light), var(--po-blue-dark) 80%);
+  background: radial-gradient(circle at center, var(--po-blue-light), var(--po-blue-dark));
   color: var(--text-main);
-  /* Trebuchet or Tahoma gives that classic early 2000s crisp UI feel */
   font-family: 'Tahoma', 'Trebuchet MS', sans-serif;
   font-size: 14px;
-  line-height: 1.6;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
-/* --- Typography --- */
+/* --- Full-Screen Container --- */
+.ffxi-container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 250px 1fr; /* Far-left sidebar, rest content */
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "header header" "menu main";
+  padding: 0;
+  margin: 0;
+}
+
+/* --- Header Section (Spans full width) --- */
+.ffxi-header {
+  grid-area: header;
+  padding: 30px 0;
+  text-align: center;
+  position: relative;
+}
+
+/* Header leaf motif */
+.ffxi-header::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 30px;
+    background-image: var(--leaf-img-url);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto 10px;
+}
+
+/* Typography */
 h1, h2, h3 {
   color: var(--text-title);
-  font-family: 'Georgia', serif; /* A slight serif for fantasy flavor */
+  font-family: 'Georgia', serif;
   text-shadow: 2px 2px 2px #000000;
   margin-top: 0;
   font-weight: normal;
   letter-spacing: 1px;
 }
 
-h1 { font-size: 2.2em; border-bottom: 1px solid var(--border-gold); padding-bottom: 5px; }
-h2 { font-size: 1.5em; }
+h1 { font-size: 2.5em; border-bottom: none; padding-bottom: 0; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.4em; }
+
+.subtitle {
+  color: var(--windurst-green); /* change color */
+  font-style: italic;
+}
 
 a {
   color: var(--link-color);
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--link-hover);
+  color: var(--text-title);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
-/* --- Layout Containers --- */
-.ffxi-container {
-  max-width: 800px;
-  width: 90%;
-  margin: 20px auto;
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 20px;
-}
-
-.ffxi-header {
-  grid-column: 1 / -1;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.subtitle {
-  color: var(--link-color);
-  font-style: italic;
-}
-
-/* --- The Classic FFXI Dialogue Box --- */
-.ffxi-dialogue-box {
-  background-color: var(--dialogue-bg);
-  border: 2px solid var(--border-gold);
-  border-top-color: var(--border-gold-light);
-  border-left-color: var(--border-gold-light);
-  border-radius: 4px;
-  padding: 25px;
-  box-shadow: 
-    inset 0 0 15px rgba(0, 0, 0, 0.8), /* Inner shadow for depth */
-    5px 5px 15px rgba(0, 0, 0, 0.6);   /* Drop shadow */
-}
-
-/* --- FFXI Menu Style --- */
+/* --- Full-Height Sidebar Menu (Far Left) --- */
 .ffxi-menu {
+  grid-area: menu;
   background-color: var(--dialogue-bg);
-  border: 2px solid var(--border-gold);
-  border-top-color: var(--border-gold-light);
-  border-left-color: var(--border-gold-light);
-  border-radius: 4px;
-  padding: 10px;
-  height: fit-content;
+  border-right: 2px solid var(--border-gold);
+  /* Example unique Windurst border image for sidebar */
+  border-image: var(--border-img-url) 10 / 2px 0 / 0 stretch;
+  padding: 30px 20px;
+  height: 100%;
+  box-sizing: border-box;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.6);
 }
 
 .ffxi-menu ul {
@@ -106,31 +118,105 @@ a:hover {
 }
 
 .ffxi-menu li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .ffxi-menu a {
   display: block;
-  padding: 8px 12px;
+  padding: 10px 15px;
   color: var(--text-main);
   border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: background-color 0.2s, color 0.2s, transform 0.1s;
 }
 
 .ffxi-menu a:hover, .ffxi-menu a:focus {
-  background: linear-gradient(to right, rgba(91, 158, 219, 0.3), transparent);
-  border-left: 3px solid var(--text-title);
-  color: var(--text-title);
-  padding-left: 9px; /* adjust for border to prevent jitter */
+  /* Teal-to-green gradient for hover, and green text */
+  background: linear-gradient(to right, rgba(91, 158, 219, 0.2), rgba(41, 128, 94, 0.2));
+  border-color: var(--border-gold-light);
+  color: var(--windurst-green);
+  transform: translateX(3px); /* small shift on hover */
 }
 
-/* --- System Messages (Chat log style) --- */
+/* --- Main Dialogue Box (Positions within Grid) --- */
+.ffxi-dialogue-box {
+  grid-area: main;
+  padding: 60px; /* main container has more padding for the content area */
+  position: relative; /* for absolute positioning of corner assets */
+}
+
+/* The actual box shape within the area */
+.ffxi-dialogue-box .dialogue-content {
+  background-color: var(--dialogue-bg);
+  border: 2px solid var(--border-gold);
+  border-top-color: var(--border-gold-light);
+  border-left-color: var(--border-gold-light);
+  border-radius: 4px;
+  padding: 40px;
+  box-shadow: 
+    inset 0 0 15px rgba(0, 0, 0, 0.8),
+    5px 5px 15px rgba(0, 0, 0, 0.6);
+  position: relative; /* nested elements are absolute relative to this box */
+}
+
+/* --- Windurst Leaf Corners for Dialogue Box --- */
+/* Top Left and Bottom Left via pseudo-elements */
+.ffxi-dialogue-box .dialogue-content::before,
+.ffxi-dialogue-box .dialogue-content::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: var(--leaf-img-url);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Position Top Left */
+.ffxi-dialogue-box .dialogue-content::before {
+    top: -10px;
+    left: -10px;
+}
+
+/* Explicit div corner for Top Right */
+.ffxi-dialogue-box .dialogue-content .top-right-leaf {
+    top: -10px;
+    right: -10px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: var(--leaf-img-url);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Position Bottom Left */
+.ffxi-dialogue-box .dialogue-content::after {
+    bottom: -10px;
+    left: -10px;
+}
+
+/* Explicit div corner for Bottom Right */
+.ffxi-dialogue-box .dialogue-content .bottom-right-leaf {
+    bottom: -10px;
+    right: -10px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: var(--leaf-img-url);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* --- System Messages --- */
 .system-message {
   color: var(--system-text);
   font-family: 'Courier New', Courier, monospace;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 10px;
-  border-left: 3px solid var(--system-text);
-  margin: 15px 0;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-left: 4px solid var(--system-text);
+  margin: 20px 0;
 }
 
 /* --- UI Buttons --- */
@@ -138,18 +224,19 @@ a:hover {
   background: linear-gradient(to bottom, #4a5b73, #233145);
   border: 1px solid var(--border-gold);
   color: var(--text-main);
-  padding: 8px 20px;
+  padding: 10px 25px;
   font-family: 'Tahoma', sans-serif;
   font-size: 14px;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 4px;
   box-shadow: inset 1px 1px 2px rgba(255,255,255,0.2), 2px 2px 5px rgba(0,0,0,0.5);
-  margin-right: 10px;
+  margin-right: 15px;
+  transition: background 0.2s, color 0.2s;
 }
 
 .ffxi-btn:hover {
   background: linear-gradient(to bottom, #5d728f, #2d3f57);
-  color: var(--text-title);
+  color: var(--windurst-green); /* change hover color */
   border-color: var(--border-gold-light);
 }
 
@@ -158,9 +245,21 @@ a:hover {
   box-shadow: inset 2px 2px 5px rgba(0,0,0,0.8);
 }
 
-/* Make it responsive for mobile */
-@media (max-width: 600px) {
+/* --- Mobile (Responsive) --- */
+@media (max-width: 800px) {
   .ffxi-container {
     grid-template-columns: 1fr;
+    grid-template-areas: "header" "menu" "main";
+  }
+  .ffxi-menu {
+    border-right: none;
+    border-bottom: 2px solid var(--border-gold);
+    height: auto;
+  }
+  .ffxi-dialogue-box {
+    padding: 30px;
+  }
+  .ffxi-dialogue-box .dialogue-content {
+      padding: 25px;
   }
 }
