@@ -1,0 +1,166 @@
+/* --- FFXI / PlayOnline Color Palette --- */
+:root {
+  --po-blue-dark: #050a14;
+  --po-blue-light: #162f4b;
+  --dialogue-bg: rgba(6, 15, 34, 0.85);
+  --border-gold: #b39b59;
+  --border-gold-light: #dfc881;
+  --text-main: #d3dde6;
+  --text-title: #fce89d;
+  --link-color: #5b9edb;
+  --link-hover: #ffffff;
+  --system-text: #ff8e8e; /* Classic red system message */
+}
+
+/* --- Global Styles --- */
+body {
+  margin: 0;
+  padding: 0;
+  /* Deep gradient background reminiscent of PlayOnline / FFXI skies */
+  background: radial-gradient(circle at top center, var(--po-blue-light), var(--po-blue-dark) 80%);
+  color: var(--text-main);
+  /* Trebuchet or Tahoma gives that classic early 2000s crisp UI feel */
+  font-family: 'Tahoma', 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+  color: var(--text-title);
+  font-family: 'Georgia', serif; /* A slight serif for fantasy flavor */
+  text-shadow: 2px 2px 2px #000000;
+  margin-top: 0;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+h1 { font-size: 2.2em; border-bottom: 1px solid var(--border-gold); padding-bottom: 5px; }
+h2 { font-size: 1.5em; }
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Layout Containers --- */
+.ffxi-container {
+  max-width: 800px;
+  width: 90%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+}
+
+.ffxi-header {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  color: var(--link-color);
+  font-style: italic;
+}
+
+/* --- The Classic FFXI Dialogue Box --- */
+.ffxi-dialogue-box {
+  background-color: var(--dialogue-bg);
+  border: 2px solid var(--border-gold);
+  border-top-color: var(--border-gold-light);
+  border-left-color: var(--border-gold-light);
+  border-radius: 4px;
+  padding: 25px;
+  box-shadow: 
+    inset 0 0 15px rgba(0, 0, 0, 0.8), /* Inner shadow for depth */
+    5px 5px 15px rgba(0, 0, 0, 0.6);   /* Drop shadow */
+}
+
+/* --- FFXI Menu Style --- */
+.ffxi-menu {
+  background-color: var(--dialogue-bg);
+  border: 2px solid var(--border-gold);
+  border-top-color: var(--border-gold-light);
+  border-left-color: var(--border-gold-light);
+  border-radius: 4px;
+  padding: 10px;
+  height: fit-content;
+}
+
+.ffxi-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ffxi-menu li {
+  margin-bottom: 5px;
+}
+
+.ffxi-menu a {
+  display: block;
+  padding: 8px 12px;
+  color: var(--text-main);
+  border: 1px solid transparent;
+}
+
+.ffxi-menu a:hover, .ffxi-menu a:focus {
+  background: linear-gradient(to right, rgba(91, 158, 219, 0.3), transparent);
+  border-left: 3px solid var(--text-title);
+  color: var(--text-title);
+  padding-left: 9px; /* adjust for border to prevent jitter */
+}
+
+/* --- System Messages (Chat log style) --- */
+.system-message {
+  color: var(--system-text);
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  border-left: 3px solid var(--system-text);
+  margin: 15px 0;
+}
+
+/* --- UI Buttons --- */
+.ffxi-btn {
+  background: linear-gradient(to bottom, #4a5b73, #233145);
+  border: 1px solid var(--border-gold);
+  color: var(--text-main);
+  padding: 8px 20px;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.2), 2px 2px 5px rgba(0,0,0,0.5);
+  margin-right: 10px;
+}
+
+.ffxi-btn:hover {
+  background: linear-gradient(to bottom, #5d728f, #2d3f57);
+  color: var(--text-title);
+  border-color: var(--border-gold-light);
+}
+
+.ffxi-btn:active {
+  background: #1a2536;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+/* Make it responsive for mobile */
+@media (max-width: 600px) {
+  .ffxi-container {
+    grid-template-columns: 1fr;
+  }
+}
