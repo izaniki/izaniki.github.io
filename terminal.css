@@ -524,3 +524,25 @@ button {
 .note { margin-top: 15px; border-top: 1px dashed var(--accent); padding-top: 5px; font-size: 0.9em; }
 .module-header { border-bottom: 2px solid var(--foreground); margin-bottom: 20px; }
 .system-nav { text-align: center; margin-bottom: 30px; border: 1px solid var(--accent); padding: 10px; }
+/* --- SYSTEM LOGO --- */
+.system-logo {
+  display: block;
+  margin: 15px 15px 0 15px;
+  max-width: 250px;
+}
+
+.system-logo img {
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  transition: opacity 0.2s ease;
+}
+
+.system-logo:hover img {
+  opacity: 0.7;
+}
+
+/* Push the sidebar down slightly to clear the logo when opened */
+.sidebar {
+  padding-top: 10px;
+}

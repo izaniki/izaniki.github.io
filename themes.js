@@ -1,21 +1,30 @@
-const availableThemes = [
-  { value: 'default', label: 'Default' },
-  { value: 'pol', label: 'POL' },
-  { value: 'amber', label: 'Amber CRT' },
-  { value: 'sandoria-blk', label: "San d'Oria (Black)" },
-  { value: 'sandoria-full', label: "San d'Oria (Full)" },
-  { value: 'bastok-blk', label: 'Bastok (Black)' },
-  { value: 'bastok-full', label: 'Bastok (Full)' },
-  { value: 'windurst-blk', label: 'Windurst (Black)' },
-  { value: 'windurst-full', label: 'Windurst (Full)' },
-  { value: 'jeuno-blk', label: 'Jeuno (Black)' },
-  { value: 'jeuno-full', label: 'Jeuno (Full)' },
-  { value: 'ahturhgan-blk', label: 'Aht Urhgan (Black)' },
-  { value: 'ahturhgan-full', label: 'Aht Urhgan (Full)' },
-  { value: 'adoulin-blk', label: 'Adoulin (Black)' },
-  { value: 'adoulin-full', label: 'Adoulin (Full)' }
+const themeCategories = [
+  {
+    label: "--- Dark Mode ---",
+    themes: [
+      { value: 'default', label: 'Default' },
+      { value: 'pol', label: 'POL' },
+      { value: 'amber', label: 'Amber CRT' },
+      { value: 'sandoria-blk', label: "San d'Oria (Black)" },
+      { value: 'bastok-blk', label: 'Bastok (Black)' },
+      { value: 'windurst-blk', label: 'Windurst (Black)' },
+      { value: 'jeuno-blk', label: 'Jeuno (Black)' },
+      { value: 'ahturhgan-blk', label: 'Aht Urhgan (Black)' },
+      { value: 'adoulin-blk', label: 'Adoulin (Black)' }
+    ]
+  },
+  {
+    label: "--- Light Mode ---",
+    themes: [
+      { value: 'sandoria-full', label: "San d'Oria (Full)" },
+      { value: 'bastok-full', label: 'Bastok (Full)' },
+      { value: 'windurst-full', label: 'Windurst (Full)' },
+      { value: 'jeuno-full', label: 'Jeuno (Full)' },
+      { value: 'ahturhgan-full', label: 'Aht Urhgan (Full)' },
+      { value: 'adoulin-full', label: 'Adoulin (Full)' }
+    ]
+  }
 ];
-
 
 const availableFonts = [
   { value: 'default', label: 'Fira Code' },
@@ -32,11 +41,19 @@ function initializeSwitchers() {
   const themeSelect = document.getElementById('theme-select');
   if (themeSelect) {
     themeSelect.innerHTML = ''; 
-    availableThemes.forEach(theme => {
-      const option = document.createElement('option');
-      option.value = theme.value;
-      option.textContent = theme.label;
-      themeSelect.appendChild(option);
+    
+    themeCategories.forEach(category => {
+      const optGroup = document.createElement('optgroup');
+      optGroup.label = category.label;
+      
+      category.themes.forEach(theme => {
+        const option = document.createElement('option');
+        option.value = theme.value;
+        option.textContent = theme.label;
+        optGroup.appendChild(option);
+      });
+      
+      themeSelect.appendChild(optGroup);
     });
 
     const currentTheme = localStorage.getItem('theme') || 'default';
