@@ -2,6 +2,7 @@
 @import url('https://cdn.staticdelivr.com/gfonts/css2?family=Fira+Code:wght@300..700&display=swap');
 
 :root {
+  /* Default: Matrix Green */
   --background: #000000;
   --foreground: #e510a9;
   --accent: #42ff9e;
@@ -10,16 +11,44 @@
   --line-height: 1.54em;
 }
 
-/* FFXI / Windurst Theme (Corrected) */
-:root[data-theme="ffxi"] {
-  --background: #060e0a; 
-  --foreground: #d3dde6;
-  --accent: #29805e; /* Windurst Green */
+/* Windurst Theme */
+:root[data-theme="windurst"] {
+  --background: #000000; 
+  --foreground: #e0f2e9; /* Pale Mint */
+  --accent: #3cb371;     /* Medium Sea Green */
+}
+
+/* San d'Oria Theme */
+:root[data-theme="sandoria"] {
+  --background: #000000;
+  --foreground: #fdeaea; /* Pale Rose */
+  --accent: #d32f2f;     /* Crimson */
+}
+
+/* Bastok Theme */
+:root[data-theme="bastok"] {
+  --background: #000000;
+  --foreground: #e6f0fa; /* Pale Steel */
+  --accent: #1976d2;     /* Republic Blue */
+}
+
+/* Jeuno Theme */
+:root[data-theme="jeuno"] {
+  --background: #000000;
+  --foreground: #fffde7; /* Pale Cream */
+  --accent: #fbc02d;     /* Archduke Gold */
+}
+
+/* PlayOnline (POL) Theme */
+:root[data-theme="pol"] {
+  --background: #000000;
+  --foreground: #e1f5fe; /* Ice White */
+  --accent: #00b4d8;     /* POL Cyan */
 }
 
 /* Amber CRT Theme */
 :root[data-theme="amber"] {
-  --background: #1a0f00;
+  --background: #000000;
   --foreground: #ffeedd;
   --accent: #ffb000;
 }

@@ -29,15 +29,11 @@
 <li><a href="item_database.html">Item Database</a></li>
     
     <li>
-      <div class="theme-switcher" style="margin-top: 30px; border-top: 1px dashed var(--accent); padding-top: 15px;">
-        <label for="theme-select" style="font-size: 0.8em; display: block; margin-bottom: 5px;">> SELECT THEME</label>
-        <select id="theme-select">
-          <option value="default">Terminal Green</option>
-          <option value="ffxi">Windurst Green</option>
-          <option value="amber">Amber CRT</option>
-        </select>
-      </div>
-    </li>
+  <div class="theme-switcher" style="margin-top: 30px; border-top: 1px dashed var(--accent); padding-top: 15px;">
+    <label for="theme-select" style="font-size: 0.8em; display: block; margin-bottom: 5px;">> SELECT THEME</label>
+    <select id="theme-select"></select>
+  </div>
+</li>
   </ul>
 </nav>
 
@@ -63,20 +59,6 @@
     </main>
 
   </div>
-<script>
-  const themeSelect = document.getElementById('theme-select');
-  const currentTheme = localStorage.getItem('theme') || 'default';
-
-  // Apply the saved theme on load
-  document.documentElement.setAttribute('data-theme', currentTheme);
-  themeSelect.value = currentTheme;
-
-  // Listen for changes
-  themeSelect.addEventListener('change', function() {
-    const selectedTheme = this.value;
-    document.documentElement.setAttribute('data-theme', selectedTheme);
-    localStorage.setItem('theme', selectedTheme);
-  });
-</script>
+<script src="themes.js"></script>
 </body>
 </html>
