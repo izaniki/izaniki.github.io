@@ -27,7 +27,7 @@
           <li><a href="ffxi_formulas.html">> FFXI Formulas</a></li>
           <li><a href="data_calculators.html">> Data Calculators</a></li>
           <li><a href="item_database.html">> Item Database</a></li>
-          <<li>
+          <li>
             <div class="theme-switcher" style="margin-top: 30px; border-top: 1px dashed var(--accent); padding-top: 15px;">
               
               <label for="theme-select" style="font-size: 0.8em; display: block; margin-bottom: 5px;">> SELECT THEME</label>
@@ -56,18 +56,6 @@
 
   </div>
   
-  <script>
-    const themeSelect = document.getElementById('theme-select');
-    const currentTheme = localStorage.getItem('theme') || 'default';
-
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    themeSelect.value = currentTheme;
-
-    themeSelect.addEventListener('change', function() {
-      const selectedTheme = this.value;
-      document.documentElement.setAttribute('data-theme', selectedTheme);
-      localStorage.setItem('theme', selectedTheme);
-    });
-  </script>
+  <script src="themes.js"></script>
 </body>
 </html>

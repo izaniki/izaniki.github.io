@@ -1,4 +1,3 @@
-
 const availableThemes = [
   { value: 'default', label: 'Terminal Green' },
   { value: 'windurst', label: 'Windurst Green' },
@@ -9,32 +8,58 @@ const availableThemes = [
   { value: 'amber', label: 'Amber CRT' }
 ];
 
-function initializeThemeSwitcher() {
+const availableFonts = [
+  { value: 'default', label: 'Fira Code (Code)' },
+  { value: 'vt323', label: 'VT323 (Retro Terminal)' },
+  { value: 'dotgothic', label: 'DotGothic16 (JRPG)' },
+  { value: 'pressstart', label: 'Press Start 2P (8-Bit)' },
+  { value: 'inter', label: 'Inter (Clean Sans)' },
+  { value: 'atkinson', label: 'Atkinson (High Legibility)' },
+  { value: 'lexend', label: 'Lexend (Dyslexia Friendly)' }
+];
+
+function initializeSwitchers() {
+  // Theme Setup
   const themeSelect = document.getElementById('theme-select');
-  if (!themeSelect) return; // Failsafe in case a page is missing the dropdown
+  if (themeSelect) {
+    themeSelect.innerHTML = ''; 
+    availableThemes.forEach(theme => {
+      const option = document.createElement('option');
+      option.value = theme.value;
+      option.textContent = theme.label;
+      themeSelect.appendChild(option);
+    });
 
+    const currentTheme = localStorage.getItem('theme') || 'default';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    themeSelect.value = currentTheme;
 
-  themeSelect.innerHTML = '';
-  
-  availableThemes.forEach(theme => {
-    const option = document.createElement('option');
-    option.value = theme.value;
-    option.textContent = theme.label;
-    themeSelect.appendChild(option);
-  });
+    themeSelect.addEventListener('change', function() {
+      document.documentElement.setAttribute('data-theme', this.value);
+      localStorage.setItem('theme', this.value);
+    });
+  }
 
- 
-  const currentTheme = localStorage.getItem('theme') || 'default';
-  document.documentElement.setAttribute('data-theme', currentTheme);
-  themeSelect.value = currentTheme;
+  // Font Setup
+  const fontSelect = document.getElementById('font-select');
+  if (fontSelect) {
+    fontSelect.innerHTML = '';
+    availableFonts.forEach(font => {
+      const option = document.createElement('option');
+      option.value = font.value;
+      option.textContent = font.label;
+      fontSelect.appendChild(option);
+    });
 
+    const currentFont = localStorage.getItem('font') || 'default';
+    document.documentElement.setAttribute('data-font', currentFont);
+    fontSelect.value = currentFont;
 
-  themeSelect.addEventListener('change', function() {
-    const selectedTheme = this.value;
-    document.documentElement.setAttribute('data-theme', selectedTheme);
-    localStorage.setItem('theme', selectedTheme);
-  });
+    fontSelect.addEventListener('change', function() {
+      document.documentElement.setAttribute('data-font', this.value);
+      localStorage.setItem('font', this.value);
+    });
+  }
 }
 
-
-document.addEventListener('DOMContentLoaded', initializeThemeSwitcher);
+document.addEventListener('DOMContentLoaded', initializeSwitchers);

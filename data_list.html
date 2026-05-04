@@ -53,18 +53,6 @@
 
   </div>
   
-  <script>
-    const themeSelect = document.getElementById('theme-select');
-    const currentTheme = localStorage.getItem('theme') || 'default';
-
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    themeSelect.value = currentTheme;
-
-    themeSelect.addEventListener('change', function() {
-      const selectedTheme = this.value;
-      document.documentElement.setAttribute('data-theme', selectedTheme);
-      localStorage.setItem('theme', selectedTheme);
-    });
-  </script>
+  <script src="themes.js"></script>
 </body>
 </html>

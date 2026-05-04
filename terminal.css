@@ -1,6 +1,5 @@
 /* Fira Code: https://github.com/tonsky/FiraCode */
-@import url('https://cdn.staticdelivr.com/gfonts/css2?family=Fira+Code:wght@300..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=DotGothic16&family=Fira+Code:wght@300..700&family=Inter:wght@400;600&family=Lexend:wght@400;600&family=Press+Start+2P&family=VT323&display=swap');
 :root {
   /* Default: Matrix Green */
   --background: #000000;
@@ -9,6 +8,7 @@
   --radius: 0;
   --font-size: 1rem;
   --line-height: 1.54em;
+  --font-main: "Fira Code", monospace;
 }
 
 /* Windurst Theme */
@@ -52,6 +52,12 @@
   --foreground: #ffeedd;
   --accent: #ffb000;
 }
+:root[data-font="vt323"] { --font-main: "VT323", monospace; }
+:root[data-font="dotgothic"] { --font-main: "DotGothic16", sans-serif; }
+:root[data-font="pressstart"] { --font-main: "Press Start 2P", cursive; }
+:root[data-font="inter"] { --font-main: "Inter", sans-serif; }
+:root[data-font="atkinson"] { --font-main: "Atkinson Hyperlegible", sans-serif; }
+:root[data-font="lexend"] { --font-main: "Lexend", sans-serif; }
 
 html {
   box-sizing: border-box;
@@ -66,13 +72,7 @@ html {
 }
 
 body {
-  font-family:
-    "Fira Code",
-    "JetBrains Mono",
-    Monaco,
-    Consolas,
-     "Ubuntu Mono",
-    monospace;
+  font-family: var(--font-main);
   font-size: var(--font-size);
   font-weight: 400;
   line-height: var(--line-height);
