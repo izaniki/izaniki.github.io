@@ -41,6 +41,21 @@
       </table>
     </div>
   </section>
+  <script>
+  const themeSelect = document.getElementById('theme-select');
+  const currentTheme = localStorage.getItem('theme') || 'default';
+
+  // Apply the saved theme on load
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  themeSelect.value = currentTheme;
+
+  // Listen for changes
+  themeSelect.addEventListener('change', function() {
+    const selectedTheme = this.value;
+    document.documentElement.setAttribute('data-theme', selectedTheme);
+    localStorage.setItem('theme', selectedTheme);
+  });
+</script>
 </body>
 </html>`
   }

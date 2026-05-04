@@ -16,18 +16,26 @@
     <aside class="sidebar">
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
+    <li><a href="index.html">Home</a></li>
           <li class="has-submenu">
             <a href="data_list.html">Data List</a>
             <ul class="sub-menu">
-              <li><a href="store_tp.html">- Store TP</a></li>
-              <li><a href="delay_reduction.html">- Delay Reduction</a></li>
-            </ul>
-          </li>
-          <li><a href="ffxi_formulas.html">> FFXI Formulas</a></li>
-          <li><a href="data_calculators.html">> Data Calculators</a></li>
-          <li><a href="item_database.html">> Item Database</a></li>
-        </ul>
+        <li><a href="store_tp.html">Store TP</a></li>
+        <li><a href="delay_reduction.html">Delay Reduction</a></li>
+      </ul>
+    </li>
+    <li><a href="ffxi_formulas.html">FFXI Formulas</a></li>
+    <li><a href="data_calculators.html">Data Calculators</a></li>
+    <li><a href="item_database.html">Item Database</a></li>
+  <div class="theme-switcher" style="margin-top: 30px; border-top: 1px dashed var(--accent); padding-top: 15px;">
+  <label for="theme-select" style="font-size: 0.8em; display: block; margin-bottom: 5px;">> SELECT THEME</label>
+  <select id="theme-select">
+    <option value="default">Terminal Green</option>
+    <option value="ffxi">Windurst Blue</option>
+    <option value="amber">Amber CRT</option>
+  </select>
+</div>
+  </ul>
       </nav>
     </aside>
 
@@ -53,6 +61,20 @@
     </main>
 
   </div>
+<script>
+  const themeSelect = document.getElementById('theme-select');
+  const currentTheme = localStorage.getItem('theme') || 'default';
 
+  // Apply the saved theme on load
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  themeSelect.value = currentTheme;
+
+  // Listen for changes
+  themeSelect.addEventListener('change', function() {
+    const selectedTheme = this.value;
+    document.documentElement.setAttribute('data-theme', selectedTheme);
+    localStorage.setItem('theme', selectedTheme);
+  });
+</script>
 </body>
 </html>
