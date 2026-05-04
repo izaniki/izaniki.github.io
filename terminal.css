@@ -4,6 +4,7 @@
   --background: #000000;
   --foreground: #e510a9;
   --accent: #42ff9e;
+  --accent2: #00f0ff; /* Cyan */
   --radius: 0;
   --font-size: 1rem;
   --line-height: 1.54em;
@@ -14,79 +15,92 @@
   --background: #000000;
   --foreground: #ffcccc;
   --accent: #d32f2f;
+  --accent2: #ffb300; /* Crown Gold */
 }
 
 :root[data-theme="bastok-blk"] {
   --background: #000000;
   --foreground: #e3f2fd;
   --accent: #1e88e5;
+  --accent2: #ffeb3b; /* Gear Yellow */
 }
 
 :root[data-theme="windurst-blk"] {
   --background: #000000;
   --foreground: #e8f5e9;
   --accent: #2e7d32;
+  --accent2: #ffee58; /* Star Yellow */
 }
 
 :root[data-theme="jeuno-blk"] {
   --background: #000000;
   --foreground: #fffde7;
   --accent: #e64a19;
+  --accent2: #ab47bc; /* Royal Purple */
 }
 
 :root[data-theme="ahturhgan-blk"] {
   --background: #000000;
   --foreground: #cfd8dc;
   --accent: #fbc02d;
+  --accent2: #00897b; /* Serpent Teal */
 }
 
 :root[data-theme="adoulin-blk"] {
   --background: #000000;
   --foreground: #ffffff;
   --accent: #fdd835;
+  --accent2: #1976d2; /* Sword Blue */
 }
 
 :root[data-theme="sandoria-full"] {
   --background: #b71c1c;
   --foreground: #ffffff;
   --accent: #fbc02d;
+  --accent2: #000000; /* Pure Black contrast */
 }
 
 :root[data-theme="bastok-full"] {
   --background: #0d2060;
   --foreground: #fcf6e8;
   --accent: #4aa3df;
+  --accent2: #ffca28; /* Brass */
 }
 
 :root[data-theme="windurst-full"] {
   --background: #fdf6e3;
   --foreground: #1b4f2c;
   --accent: #d84315;
+  --accent2: #f57f17; /* Dark Gold */
 }
 
 :root[data-theme="jeuno-full"] {
   --background: #fcfaf2;
   --foreground: #3e1722;
   --accent: #ff3d00;
+  --accent2: #00838f; /* Deep Teal */
 }
 
 :root[data-theme="ahturhgan-full"] {
   --background: #0a0a0a;
   --foreground: #a8a2b5;
   --accent: #d4b22c;
+  --accent2: #4caf50; /* Vivid Green */
 }
 
 :root[data-theme="adoulin-full"] {
   --background: #2b5bee;
   --foreground: #ffffff;
   --accent: #f9d021;
+  --accent2: #84ffff; /* Light Cyan */
 }
 
 /* PlayOnline (POL) Theme */
 :root[data-theme="pol"] {
   --background: #000000;
-  --foreground: #e1f5fe; /* Ice White */
-  --accent: #00b4d8;     /* POL Cyan */
+  --foreground: #e1f5fe; 
+  --accent: #00b4d8;     
+  --accent2: #0277bd; /* Deep Blue */
 }
 
 /* Amber CRT Theme */
@@ -94,7 +108,9 @@
   --background: #000000;
   --foreground: #ffeedd;
   --accent: #ffb000;
+  --accent2: #ff3d00; /* Red-Orange */
 }
+
 :root[data-font="vt323"] { --font-main: "VT323", monospace; }
 :root[data-font="dotgothic"] { --font-main: "DotGothic16", sans-serif; }
 :root[data-font="pressstart"] { 
@@ -485,6 +501,7 @@ b, strong,
 th,
 button {
   font-weight: 600;
+  color: var(--accent2);
 }
 /* --- SIDEBAR & LAYOUT --- */
 .menu-checkbox { display: none; }

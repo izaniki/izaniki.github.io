@@ -14,7 +14,7 @@ const themeCategories = [
     ]
   },
   {
-    label: "--- Light Mode ---",
+    label: "--- Color Mode ---",
     themes: [
       { value: 'sandoria-full', label: "San d'Oria (Full)" },
       { value: 'bastok-full', label: 'Bastok (Full)' },
