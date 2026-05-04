@@ -4,7 +4,7 @@ const availableThemes = [
   { value: 'sandoria', label: "San d'Oria Red" },
   { value: 'bastok', label: 'Bastok Blue' },
   { value: 'jeuno', label: 'Jeuno Gold' },
-  { value: 'pol', label: 'PlayOnline Cyan' },
+  { value: 'pol', label: 'POL Cyan' },
   { value: 'amber', label: 'Amber CRT' }
 ];
 
