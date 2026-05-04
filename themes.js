@@ -9,13 +9,13 @@ const availableThemes = [
 ];
 
 const availableFonts = [
-  { value: 'default', label: 'Fira Code (Code)' },
-  { value: 'vt323', label: 'VT323 (Retro Terminal)' },
-  { value: 'dotgothic', label: 'DotGothic16 (JRPG)' },
-  { value: 'pressstart', label: 'Press Start 2P (8-Bit)' },
-  { value: 'inter', label: 'Inter (Clean Sans)' },
-  { value: 'atkinson', label: 'Atkinson (High Legibility)' },
-  { value: 'lexend', label: 'Lexend (Dyslexia Friendly)' }
+  { value: 'default', label: 'Fira Code' },
+  { value: 'vt323', label: 'VT323' },
+  { value: 'dotgothic', label: 'DotGothic16' },
+  { value: 'pressstart', label: 'Press Start 2P' },
+  { value: 'inter', label: 'Inter' },
+  { value: 'atkinson', label: 'Atkinson' },
+  { value: 'lexend', label: 'Lexend' }
 ];
 
 function initializeSwitchers() {
