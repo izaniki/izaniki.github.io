@@ -412,8 +412,7 @@ button {
 
 .sidebar ul { margin-left: 0; list-style: none; }
 .sidebar li { margin-bottom: 10px; }
-.sidebar .sub-menu { display: none; margin-left: 15px; margin-top: 5px; border-left: 1px dashed var(--accent); padding-left: 10px; }
-.sidebar .has-submenu:hover .sub-menu { display: block; }
+.sidebar .sub-menu { display: block; margin-left: 15px; margin-top: 5px; border-left: 1px dashed var(--accent); padding-left: 10px; }
 
 .main-content { flex-grow: 1; padding: 20px 40px; max-width: 1000px; }
 
