@@ -527,11 +527,12 @@ button {
 /* --- SYSTEM LOGO --- */
 .system-logo {
   display: block;
-  margin: 15px 15px 0 15px;
-  max-width: 250px;
+  margin: 10px auto 20px auto; /* Centers image in the sidebar */
+  width: 120px; /* Shrinks the image. Adjust this value as needed */
 }
 
 .system-logo img {
+  width: 100%; /* Forces image to respect the 120px width limit */
   border: none;
   padding: 0;
   border-radius: 0;
@@ -542,7 +543,11 @@ button {
   opacity: 0.7;
 }
 
-/* Push the sidebar down slightly to clear the logo when opened */
 .sidebar {
-  padding-top: 10px;
+  width: 250px;
+  border-right: 2px solid var(--accent);
+  padding: 20px;
+  padding-top: 10px; /* Reduced from earlier so the logo sits near the top */
+  transition: margin-left 0.3s ease;
+  flex-shrink: 0;
 }
