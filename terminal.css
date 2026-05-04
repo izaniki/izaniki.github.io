@@ -201,7 +201,7 @@
 :root[data-theme="pup-full"] { --background: #fbc02d; --foreground: #212121; --accent: #d32f2f; --accent2: #1976d2; }
 :root[data-theme="dnc-full"] { --background: #ad1457; --foreground: #ffffff; --accent: #212121; --accent2: #fbc02d; }
 :root[data-theme="sch-full"] { --background: #212121; --foreground: #f5f5f5; --accent: #ffffff; --accent2: #ffca28; }
-:root[data-theme="geo-full"] { --background: #9e9d24; --foreground: #ffffff; --accent: #f57f17; --accent2: #3e2723; }
+:root[data-theme="geo-full"] { --background: #182e68; --foreground: #ffffff; --accent: #f57f17; --accent2: #3e2723; }
 :root[data-theme="run-full"] { --background: #01579b; --foreground: #ffffff; --accent: #cfd8dc; --accent2: #4dd0e1; }
 
 :root[data-font="vt323"] { --font-main: "VT323", monospace; }
