@@ -71,33 +71,9 @@
 /* Limbus (Black) */
 :root[data-theme="limbus-blk"] {
   --background: #000000;
-  --foreground: #f8bbd0; /* Pale Pink */
+  --foreground: #9239f8; /* Pale Pink */
   --accent: #ff4081;     /* Neon Pink */
   --accent2: #00e5ff;    /* Cyan/Blue */
-}
-
-/* White Mage (Black) */
-:root[data-theme="whm-blk"] {
-  --background: #000000;
-  --foreground: #ffffff; /* Robe White */
-  --accent: #d32f2f;     /* Trim Red */
-  --accent2: #4dd0e1;    /* Healing Blue */
-}
-
-/* Black Mage (Black) */
-:root[data-theme="blm-blk"] {
-  --background: #000000;
-  --foreground: #e0e0e0; /* Grey */
-  --accent: #1976d2;     /* Coat Blue */
-  --accent2: #fbc02d;    /* Hat Brim Yellow */
-}
-
-/* Red Mage (Black) */
-:root[data-theme="rdm-blk"] {
-  --background: #000000;
-  --foreground: #ffcdd2; /* Pale Pink/Red */
-  --accent: #b71c1c;     /* Crimson */
-  --accent2: #ffffff;    /* Feather White */
 }
 
 :root[data-theme="sandoria-full"] {
@@ -182,29 +158,51 @@
   --accent2: #00b0ff;    /* Bright Blue */
 }
 
-/* White Mage (Full - White) */
-:root[data-theme="whm-full"] {
-  --background: #ffffff; /* White Robe */
-  --foreground: #212121; /* Dark Text */
-  --accent: #b71c1c;     /* Deep Red */
-  --accent2: #0277bd;    /* Healing Blue */
-}
+:root[data-theme="war-blk"] { --background: #000000; --foreground: #e0e0e0; --accent: #c62828; --accent2: #795548; }
+:root[data-theme="mnk-blk"] { --background: #000000; --foreground: #fff8e1; --accent: #f9a825; --accent2: #8d6e63; }
+:root[data-theme="whm-blk"] { --background: #000000; --foreground: #ffffff; --accent: #d32f2f; --accent2: #4dd0e1; }
+:root[data-theme="blm-blk"] { --background: #000000; --foreground: #e0e0e0; --accent: #1976d2; --accent2: #fbc02d; }
+:root[data-theme="rdm-blk"] { --background: #000000; --foreground: #ffcdd2; --accent: #b71c1c; --accent2: #ffffff; }
+:root[data-theme="thf-blk"] { --background: #000000; --foreground: #e8f5e9; --accent: #2e7d32; --accent2: #fbc02d; }
+:root[data-theme="pld-blk"] { --background: #000000; --foreground: #ffffff; --accent: #eceff1; --accent2: #fbc02d; }
+:root[data-theme="drk-blk"] { --background: #000000; --foreground: #e1bee7; --accent: #6a1b9a; --accent2: #b71c1c; }
+:root[data-theme="bst-blk"] { --background: #000000; --foreground: #efebe9; --accent: #5d4037; --accent2: #ffb300; }
+:root[data-theme="brd-blk"] { --background: #000000; --foreground: #f1f8e9; --accent: #558b2f; --accent2: #cddc39; }
+:root[data-theme="rng-blk"] { --background: #000000; --foreground: #dcedc8; --accent: #827717; --accent2: #8d6e63; }
+:root[data-theme="sam-blk"] { --background: #000000; --foreground: #ffcdd2; --accent: #d32f2f; --accent2: #ffca28; }
+:root[data-theme="nin-blk"] { --background: #000000; --foreground: #cfd8dc; --accent: #4527a0; --accent2: #607d8b; }
+:root[data-theme="drg-blk"] { --background: #000000; --foreground: #e8eaf6; --accent: #311b92; --accent2: #03a9f4; }
+:root[data-theme="smn-blk"] { --background: #000000; --foreground: #e0f2f1; --accent: #00695c; --accent2: #ff7043; }
+:root[data-theme="blu-blk"] { --background: #000000; --foreground: #e3f2fd; --accent: #1565c0; --accent2: #fdd835; }
+:root[data-theme="cor-blk"] { --background: #000000; --foreground: #eceff1; --accent: #283593; --accent2: #d32f2f; }
+:root[data-theme="pup-blk"] { --background: #000000; --foreground: #fffde7; --accent: #fbc02d; --accent2: #c2185b; }
+:root[data-theme="dnc-blk"] { --background: #000000; --foreground: #ffcdd2; --accent: #c2185b; --accent2: #ffb300; }
+:root[data-theme="sch-blk"] { --background: #000000; --foreground: #fafafa; --accent: #424242; --accent2: #9e9e9e; }
+:root[data-theme="geo-blk"] { --background: #000000; --foreground: #f0f4c3; --accent: #827717; --accent2: #fbc02d; }
+:root[data-theme="run-blk"] { --background: #000000; --foreground: #e1f5fe; --accent: #0277bd; --accent2: #b0bec5; }
 
-/* Black Mage (Full - Navy) */
-:root[data-theme="blm-full"] {
-  --background: #151b27; /* Dark Coat Navy */
-  --foreground: #ffffff; /* White */
-  --accent: #fdd835;     /* Hat Yellow */
-  --accent2: #ab47bc;    /* Magic Purple */
-}
-
-/* Red Mage (Full - Crimson) */
-:root[data-theme="rdm-full"] {
-  --background: #8e0000; /* Deep Crimson */
-  --foreground: #ffffff; /* White */
-  --accent: #212121;     /* Black Trim */
-  --accent2: #fbc02d;    /* Gold Trim */
-}
+:root[data-theme="war-full"] { --background: #3e2723; --foreground: #ffffff; --accent: #b71c1c; --accent2: #9e9e9e; }
+:root[data-theme="mnk-full"] { --background: #f57f17; --foreground: #212121; --accent: #4e342e; --accent2: #ffffff; }
+:root[data-theme="whm-full"] { --background: #ffffff; --foreground: #212121; --accent: #b71c1c; --accent2: #0277bd; }
+:root[data-theme="blm-full"] { --background: #151b27; --foreground: #ffffff; --accent: #fdd835; --accent2: #ab47bc; }
+:root[data-theme="rdm-full"] { --background: #8e0000; --foreground: #ffffff; --accent: #212121; --accent2: #fbc02d; }
+:root[data-theme="thf-full"] { --background: #1b5e20; --foreground: #ffffff; --accent: #ffb300; --accent2: #000000; }
+:root[data-theme="pld-full"] { --background: #ffffff; --foreground: #212121; --accent: #fbc02d; --accent2: #1976d2; }
+:root[data-theme="drk-full"] { --background: #121212; --foreground: #e0e0e0; --accent: #8e24aa; --accent2: #d32f2f; }
+:root[data-theme="bst-full"] { --background: #4e342e; --foreground: #ffffff; --accent: #ff9800; --accent2: #d7ccc8; }
+:root[data-theme="brd-full"] { --background: #33691e; --foreground: #ffffff; --accent: #ffc107; --accent2: #8d6e63; }
+:root[data-theme="rng-full"] { --background: #558b2f; --foreground: #ffffff; --accent: #3e2723; --accent2: #ffca28; }
+:root[data-theme="sam-full"] { --background: #b71c1c; --foreground: #ffffff; --accent: #212121; --accent2: #ffc107; }
+:root[data-theme="nin-full"] { --background: #212121; --foreground: #e0e0e0; --accent: #512da8; --accent2: #b0bec5; }
+:root[data-theme="drg-full"] { --background: #311b92; --foreground: #ffffff; --accent: #29b6f6; --accent2: #ffb300; }
+:root[data-theme="smn-full"] { --background: #004d40; --foreground: #ffffff; --accent: #ff9800; --accent2: #80cbc4; }
+:root[data-theme="blu-full"] { --background: #0d47a1; --foreground: #ffffff; --accent: #fbc02d; --accent2: #81d4fa; }
+:root[data-theme="cor-full"] { --background: #1a237e; --foreground: #ffffff; --accent: #b71c1c; --accent2: #cfd8dc; }
+:root[data-theme="pup-full"] { --background: #fbc02d; --foreground: #212121; --accent: #d32f2f; --accent2: #1976d2; }
+:root[data-theme="dnc-full"] { --background: #ad1457; --foreground: #ffffff; --accent: #212121; --accent2: #fbc02d; }
+:root[data-theme="sch-full"] { --background: #212121; --foreground: #f5f5f5; --accent: #ffffff; --accent2: #ffca28; }
+:root[data-theme="geo-full"] { --background: #9e9d24; --foreground: #ffffff; --accent: #f57f17; --accent2: #3e2723; }
+:root[data-theme="run-full"] { --background: #01579b; --foreground: #ffffff; --accent: #cfd8dc; --accent2: #4dd0e1; }
 
 :root[data-font="vt323"] { --font-main: "VT323", monospace; }
 :root[data-font="dotgothic"] { --font-main: "DotGothic16", sans-serif; }
