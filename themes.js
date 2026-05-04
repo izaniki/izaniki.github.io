@@ -27,13 +27,21 @@ const themeCategories = [
 ];
 
 const availableFonts = [
-  { value: 'default', label: 'Fira Code' },
-  { value: 'vt323', label: 'VT323' },
-  { value: 'dotgothic', label: 'DotGothic16' },
-  { value: 'pressstart', label: 'Press Start 2P' },
-  { value: 'inter', label: 'Inter' },
-  { value: 'atkinson', label: 'Atkinson' },
-  { value: 'lexend', label: 'Lexend' }
+  { value: 'default',       label: 'Fira Code' },
+  { value: 'jetbrains',     label: 'JetBrains Mono' },
+  { value: 'ibmplexmono',   label: 'IBM Plex Mono' },
+  { value: 'sourcecodepro', label: 'Source Code Pro' },
+  { value: 'spacemono',     label: 'Space Mono' },
+  { value: 'inconsolata',   label: 'Inconsolata' },
+  { value: 'sharetech',     label: 'Share Tech Mono' },
+  { value: 'orbitron',      label: 'Orbitron' },
+  { value: 'oxanium',       label: 'Oxanium' },
+  { value: 'vt323',         label: 'VT323' },
+  { value: 'dotgothic',     label: 'DotGothic16' },
+  { value: 'pressstart',    label: 'Press Start 2P' },
+  { value: 'inter',         label: 'Inter' },
+  { value: 'atkinson',      label: 'Atkinson' },
+  { value: 'lexend',        label: 'Lexend' }
 ];
 
 function initializeSwitchers() {
