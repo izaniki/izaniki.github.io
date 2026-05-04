@@ -1,0 +1,41 @@
+{
+  "name": "create_new_file",
+  "arguments": {
+    "filepath": "formulas.html",
+    "contents": `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="ffxi-container">
+  <header class="ffxi-header">
+    <h1></h1>
+  </header>
+  <nav class="ffxi-menu">
+    <ul>
+      <li><a href="data_list.html">Data List</a></li>
+<li><a href="data_list.html#store-tp">Store TP</a></li>
+      <li><a href="ffxi_formulas.html">FFXI Formulas</a></li>
+      <li><a href="data_calculators.html">Data Calculators</a></li>
+      <li><a href="item_database.html">Item Database</a></li>
+    </ul>
+  </nav>
+  <section class="ffxi-dialogue-box">
+    <div class="dialogue-content">
+      <h2>TP Gain Calculator</h2>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <th>Weapon Delay (sec)</th>
+          <th>TP Gain</th>
+        </tr>
+        {{ tp_gain_table }}
+      </table>
+    </div>
+  </section>
+</body>
+</html>`
+  }
+}
