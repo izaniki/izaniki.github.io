@@ -52,6 +52,53 @@
   --accent: #fdd835;
   --accent2: #1976d2; /* Sword Blue */
 }
+/* Chocobo (Black) */
+:root[data-theme="chocobo-blk"] {
+  --background: #000000;
+  --foreground: #fff9c4; /* Pale Yellow */
+  --accent: #fbc02d;     /* Chocobo Yellow */
+  --accent2: #8d6e63;    /* Beak/Feather Brown */
+}
+
+/* Moogle (Black) */
+:root[data-theme="moogle-blk"] {
+  --background: #000000;
+  --foreground: #ffffff; /* White Fur */
+  --accent: #d32f2f;     /* Red Trim/Nose */
+  --accent2: #ab47bc;    /* Pom Pom Purple */
+}
+
+/* Limbus (Black) */
+:root[data-theme="limbus-blk"] {
+  --background: #000000;
+  --foreground: #f8bbd0; /* Pale Pink */
+  --accent: #ff4081;     /* Neon Pink */
+  --accent2: #00e5ff;    /* Cyan/Blue */
+}
+
+/* White Mage (Black) */
+:root[data-theme="whm-blk"] {
+  --background: #000000;
+  --foreground: #ffffff; /* Robe White */
+  --accent: #d32f2f;     /* Trim Red */
+  --accent2: #4dd0e1;    /* Healing Blue */
+}
+
+/* Black Mage (Black) */
+:root[data-theme="blm-blk"] {
+  --background: #000000;
+  --foreground: #e0e0e0; /* Grey */
+  --accent: #1976d2;     /* Coat Blue */
+  --accent2: #fbc02d;    /* Hat Brim Yellow */
+}
+
+/* Red Mage (Black) */
+:root[data-theme="rdm-blk"] {
+  --background: #000000;
+  --foreground: #ffcdd2; /* Pale Pink/Red */
+  --accent: #b71c1c;     /* Crimson */
+  --accent2: #ffffff;    /* Feather White */
+}
 
 :root[data-theme="sandoria-full"] {
   --background: #b71c1c;
@@ -109,6 +156,54 @@
   --foreground: #ffeedd;
   --accent: #ffb000;
   --accent2: #ff3d00; /* Red-Orange */
+}
+
+/* Chocobo (Full - Yellow) */
+:root[data-theme="chocobo-full"] {
+  --background: #fbc02d; /* Chocobo Yellow */
+  --foreground: #3e2723; /* Dark Brown Text */
+  --accent: #e65100;     /* Orange */
+  --accent2: #ffffff;    /* White */
+}
+
+/* Moogle (Full - Off-White) */
+:root[data-theme="moogle-full"] {
+  --background: #f5f5f5; /* Light Grey/White */
+  --foreground: #212121; /* Dark Text */
+  --accent: #c62828;     /* Red */
+  --accent2: #8e24aa;    /* Pom Pom Purple */
+}
+
+/* Limbus (Full - Deep Purple) */
+:root[data-theme="limbus-full"] {
+  --background: #2b003a; /* Deep Purple */
+  --foreground: #ffffff; /* White */
+  --accent: #ff4081;     /* Neon Pink */
+  --accent2: #00b0ff;    /* Bright Blue */
+}
+
+/* White Mage (Full - White) */
+:root[data-theme="whm-full"] {
+  --background: #ffffff; /* White Robe */
+  --foreground: #212121; /* Dark Text */
+  --accent: #b71c1c;     /* Deep Red */
+  --accent2: #0277bd;    /* Healing Blue */
+}
+
+/* Black Mage (Full - Navy) */
+:root[data-theme="blm-full"] {
+  --background: #151b27; /* Dark Coat Navy */
+  --foreground: #ffffff; /* White */
+  --accent: #fdd835;     /* Hat Yellow */
+  --accent2: #ab47bc;    /* Magic Purple */
+}
+
+/* Red Mage (Full - Crimson) */
+:root[data-theme="rdm-full"] {
+  --background: #8e0000; /* Deep Crimson */
+  --foreground: #ffffff; /* White */
+  --accent: #212121;     /* Black Trim */
+  --accent2: #fbc02d;    /* Gold Trim */
 }
 
 :root[data-font="vt323"] { --font-main: "VT323", monospace; }
