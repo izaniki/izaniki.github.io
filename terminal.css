@@ -9,6 +9,19 @@
   --font-size: 1rem;
   --line-height: 1.54em;
 }
+/* FFXI / Windurst Theme */
+[data-theme="ffxi"] {
+  --background: #030810;
+  --foreground: #7dfa88;
+  --accent: #c9c93e;
+}
+
+/* Amber CRT Theme */
+[data-theme="amber"] {
+  --background: #1a0f00;
+  --foreground: #ffeedd;
+  --accent: #ffb000;
+}
 
 html {
   box-sizing: border-box;
