@@ -507,13 +507,12 @@ button {
   padding: 10px 20px 0 20px; 
   transition: margin-left 0.3s ease;
   flex-shrink: 0;
-  
-  
   height: 100vh;
   position: sticky;
   top: 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .sidebar nav {
@@ -558,7 +557,8 @@ button {
 .system-logo {
   display: block;
   margin: 10px auto 20px auto; 
-  width: 120px; 
+  width: 120px;
+  flex-shrink: 0 
 }
 
 .system-logo img {
@@ -571,13 +571,4 @@ button {
 
 .system-logo:hover img {
   opacity: 0.7;
-}
-
-.sidebar {
-  width: 250px;
-  border-right: 2px solid var(--accent);
-  padding: 20px;
-  padding-top: 10px; 
-  transition: margin-left 0.3s ease;
-  flex-shrink: 0;
 }
