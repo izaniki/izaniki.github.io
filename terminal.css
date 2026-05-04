@@ -9,15 +9,16 @@
   --font-size: 1rem;
   --line-height: 1.54em;
 }
-/* FFXI / Windurst Theme */
-[data-theme="ffxi"] {
-  --background: #030810;
-  --foreground: #7dfa88;
-  --accent: #c9c93e;
+
+/* FFXI / Windurst Theme (Corrected) */
+:root[data-theme="ffxi"] {
+  --background: #060e0a; 
+  --foreground: #d3dde6;
+  --accent: #29805e; /* Windurst Green */
 }
 
 /* Amber CRT Theme */
-[data-theme="amber"] {
+:root[data-theme="amber"] {
   --background: #1a0f00;
   --foreground: #ffeedd;
   --accent: #ffb000;

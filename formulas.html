@@ -1,8 +1,4 @@
-{
-  "name": "create_new_file",
-  "arguments": {
-    "filepath": "formulas.html",
-    "contents": `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,53 +6,67 @@
   <title>FFXI Formulas</title>
   <link rel="stylesheet" href="terminal.css">
 </head>
-<body class="ffxi-container">
-  <header class="ffxi-header">
-    <h1>FFXI Formulas</h1>
-  </header>
-  <nav class="ffxi-menu">
-  <ul>
-    <li><a href="index.html"> Home</a></li>
+<body>
+
+  <input type="checkbox" id="nav-toggle" class="menu-checkbox">
+  <label for="nav-toggle" class="menu-btn">[ TOGGLE SYSTEM MENU ]</label>
+
+  <div class="layout-wrapper">
+    
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="index.html">> Home</a></li>
           <li class="has-submenu">
-            <a href="data_list.html"> Data List</a>
+            <a href="data_list.html">> Data List</a>
             <ul class="sub-menu">
-        <li><a href="store_tp.html">Store TP</a></li>
-        <li><a href="delay_reduction.html">Delay Reduction</a></li>
-      </ul>
-    </li>
-    <li><a href="ffxi_formulas.html">FFXI Formulas</a></li>
-    <li><a href="data_calculators.html">Data Calculators</a></li>
-    <li><a href="item_database.html">Item Database</a></li>
-  </ul>
-</nav>
-  <section class="ffxi-dialogue-box">
-    <div class="dialogue-content">
-      <h2>TP Gain Calculator</h2>
-      <table border="1" cellpadding="5" cellspacing="0">
-        <tr>
-          <th>Weapon Delay (sec)</th>
-          <th>TP Gain</th>
-        </tr>
-        {{ tp_gain_table }}
-      </table>
-    </div>
-  </section>
+              <li><a href="store_tp.html">- Store TP</a></li>
+              <li><a href="delay_reduction.html">- Delay Reduction</a></li>
+            </ul>
+          </li>
+          <li><a href="ffxi_formulas.html">> FFXI Formulas</a></li>
+          <li><a href="data_calculators.html">> Data Calculators</a></li>
+          <li><a href="item_database.html">> Item Database</a></li>
+          <li>
+            <div class="theme-switcher" style="margin-top: 30px; border-top: 1px dashed var(--accent); padding-top: 15px;">
+              <label for="theme-select" style="font-size: 0.8em; display: block; margin-bottom: 5px;">> SELECT THEME</label>
+              <select id="theme-select">
+                <option value="default">Terminal Green</option>
+                <option value="ffxi">Windurst Green</option>
+                <option value="amber">Amber CRT</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="terminal-wrapper">
+        <h2>TP Gain Calculator</h2>
+        <table border="1" cellpadding="5" cellspacing="0">
+          <tr>
+            <th>Weapon Delay (sec)</th>
+            <th>TP Gain</th>
+          </tr>
+          </table>
+      </div>
+    </main>
+
+  </div>
+  
   <script>
-  const themeSelect = document.getElementById('theme-select');
-  const currentTheme = localStorage.getItem('theme') || 'default';
+    const themeSelect = document.getElementById('theme-select');
+    const currentTheme = localStorage.getItem('theme') || 'default';
 
-  // Apply the saved theme on load
-  document.documentElement.setAttribute('data-theme', currentTheme);
-  themeSelect.value = currentTheme;
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    themeSelect.value = currentTheme;
 
-  // Listen for changes
-  themeSelect.addEventListener('change', function() {
-    const selectedTheme = this.value;
-    document.documentElement.setAttribute('data-theme', selectedTheme);
-    localStorage.setItem('theme', selectedTheme);
-  });
-</script>
+    themeSelect.addEventListener('change', function() {
+      const selectedTheme = this.value;
+      document.documentElement.setAttribute('data-theme', selectedTheme);
+      localStorage.setItem('theme', selectedTheme);
+    });
+  </script>
 </body>
-</html>`
-  }
-}
+</html>
