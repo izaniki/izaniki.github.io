@@ -138,6 +138,17 @@ a:hover {
   color: var(--windurst-green);
   transform: translateX(3px); /* small shift on hover */
 }
+.ffxi-menu .sub-menu {
+  margin-top: 5px;
+  margin-left: 20px;     /* Controls the indentation */
+  padding-left: 0;
+  list-style-type: square; /* Changes the bullet style */
+  font-size: 0.9em;      /* Slightly smaller text for hierarchy */
+}
+
+.ffxi-menu .sub-menu li {
+  margin-bottom: 5px;
+}
 
 /* --- Main Dialogue Box (Positions within Grid) --- */
 .ffxi-dialogue-box {
