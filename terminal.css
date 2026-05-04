@@ -10,32 +10,76 @@
   --font-main: "Fira Code", monospace;
 }
 
-/* Windurst Theme */
-:root[data-theme="windurst"] {
-  --background: #000000; 
-  --foreground: #e0f2e9; /* Pale Mint */
-  --accent: #3cb371;     /* Medium Sea Green */
+:root[data-theme="sandoria-blk"] {
+  --background: #000000;
+  --foreground: #ffcccc;
+  --accent: #d32f2f;
 }
 
-/* San d'Oria Theme */
-:root[data-theme="sandoria"] {
+:root[data-theme="bastok-blk"] {
   --background: #000000;
-  --foreground: #fdeaea; /* Pale Rose */
-  --accent: #d32f2f;     /* Crimson */
+  --foreground: #e3f2fd;
+  --accent: #1e88e5;
 }
 
-/* Bastok Theme */
-:root[data-theme="bastok"] {
+:root[data-theme="windurst-blk"] {
   --background: #000000;
-  --foreground: #e6f0fa; /* Pale Steel */
-  --accent: #1976d2;     /* Republic Blue */
+  --foreground: #e8f5e9;
+  --accent: #2e7d32;
 }
 
-/* Jeuno Theme */
-:root[data-theme="jeuno"] {
+:root[data-theme="jeuno-blk"] {
   --background: #000000;
-  --foreground: #fffde7; /* Pale Cream */
-  --accent: #fbc02d;     /* Archduke Gold */
+  --foreground: #fffde7;
+  --accent: #e64a19;
+}
+
+:root[data-theme="ahturhgan-blk"] {
+  --background: #000000;
+  --foreground: #cfd8dc;
+  --accent: #fbc02d;
+}
+
+:root[data-theme="adoulin-blk"] {
+  --background: #000000;
+  --foreground: #ffffff;
+  --accent: #fdd835;
+}
+
+:root[data-theme="sandoria-full"] {
+  --background: #b71c1c;
+  --foreground: #ffffff;
+  --accent: #fbc02d;
+}
+
+:root[data-theme="bastok-full"] {
+  --background: #0d2060;
+  --foreground: #fcf6e8;
+  --accent: #4aa3df;
+}
+
+:root[data-theme="windurst-full"] {
+  --background: #fdf6e3;
+  --foreground: #1b4f2c;
+  --accent: #d84315;
+}
+
+:root[data-theme="jeuno-full"] {
+  --background: #fcfaf2;
+  --foreground: #3e1722;
+  --accent: #ff3d00;
+}
+
+:root[data-theme="ahturhgan-full"] {
+  --background: #0a0a0a;
+  --foreground: #a8a2b5;
+  --accent: #d4b22c;
+}
+
+:root[data-theme="adoulin-full"] {
+  --background: #2b5bee;
+  --foreground: #ffffff;
+  --accent: #f9d021;
 }
 
 /* PlayOnline (POL) Theme */
