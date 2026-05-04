@@ -1,238 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Store TP Math</title>
-<nav class="ffxi-menu">
-  <ul>
-    <li class="has-submenu">
-    <a href="index.html">Home</a>
-      <a href="data_list.html">Data List</a>
-      <ul class="sub-menu">
-        <li><a href="store_tp.html">Store TP</a></li>
-        <li><a href="delay_reduction.html">Delay Reduction</a></li>
-      </ul>
-    </li>
-    <li><a href="ffxi_formulas.html">FFXI Formulas</a></li>
-    <li><a href="data_calculators.html">Data Calculators</a></li>
-    <li><a href="item_database.html">Item Database</a></li>
-  </ul>
-</nav>
-<style>
-    body { font-family: monospace; background: #050505; color: #00ff41; line-height: 1.5; }
-    .terminal-wrapper { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
-    .grid-item { border: 1px solid #00ff41; padding: 15px; }
-    .relationship-block { grid-column: span 2; border-color: #00bcd4; }
-    .note { margin-top: 15px; border-top: 1px dashed #00ff41; padding-top: 5px; font-size: 0.9em; }
-    a { color: #00bcd4; text-decoration: none; }
-    a:hover { background: #00bcd4; color: #050505; }
-    hr { border: 0; border-top: 1px solid #00ff41; margin: 30px 0; }
-    img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
-    .system-nav { text-align: center; margin-bottom: 30px; border: 1px solid #00ff41; padding: 10px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store TP Math</title>
+  <link rel="stylesheet" href="terminal.css">
 </head>
 <body>
 
-<div id="TOP" class="terminal-wrapper">
+  <input type="checkbox" id="nav-toggle" class="menu-checkbox">
+  <label for="nav-toggle" class="menu-btn">[ TOGGLE SYSTEM MENU ]</label>
 
-<nav class="system-nav">
-  <div>// SYSTEM NAVIGATION //</div>
-  <a href="#TP_GEN">[ TP GENERATION ]</a> | 
-  <a href="#DELAY_RED">[ DELAY REDUCTION ]</a>
-</nav>
+  <div class="layout-wrapper">
+    
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li class="has-submenu">
+            <a href="index.html">> Home</a>
+            <a href="data_list.html">> Data List</a>
+            <ul class="sub-menu">
+              <li><a href="store_tp.html">- Store TP</a></li>
+              <li><a href="delay_reduction.html">- Delay Reduction</a></li>
+            </ul>
+          </li>
+          <li><a href="ffxi_formulas.html">> FFXI Formulas</a></li>
+          <li><a href="data_calculators.html">> Data Calculators</a></li>
+          <li><a href="item_database.html">> Item Database</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-<hr />
+    <main class="main-content">
+      <div id="TOP" class="terminal-wrapper">
 
-<div id="TP_GEN" class="module-header">
-  <h1>TP Generation</h1>
-  <h2>&gt;&gt; MODULE: STORE_TP &amp; MULTI_ATTACK</h2>
-</div>
+        <nav class="system-nav">
+          <div>// SYSTEM NAVIGATION //</div>
+          <a href="#TP_GEN">[ TP GENERATION ]</a> | 
+          <a href="#DELAY_RED">[ DELAY REDUCTION ]</a>
+        </nav>
 
-<h3>[ ELI5: (Over?) Simplified ]</h3>
+        <hr />
 
-<div class="data-grid">
-  
-  <div class="grid-item stp-block">
-    <h4>STORE_TP</h4>
-    <p><strong>X STP = X% MORE TP GAINED</strong></p>
-    <p>1 STP = 1% MORE TP<br/>10 STP = 10% MORE TP<br/>100 STP = 100% MORE TP</p>
-    <div class="note">
-      <strong>NOTE:</strong> NO KNOWN CAP
-    </div>
+        <div id="TP_GEN" class="module-header">
+          <h1>TP Generation</h1>
+          <h2>&gt;&gt; MODULE: STORE_TP &amp; MULTI_ATTACK</h2>
+        </div>
+
+        <h3>[ ELI5: (Over?) Simplified ]</h3>
+
+        <div class="data-grid">
+          <div class="grid-item stp-block">
+            <h4>STORE_TP</h4>
+            <p><strong>X STP = X% MORE TP GAINED</strong></p>
+            <p>1 STP = 1% MORE TP<br/>10 STP = 10% MORE TP<br/>100 STP = 100% MORE TP</p>
+            <div class="note">
+              <strong>NOTE:</strong> NO KNOWN CAP
+            </div>
+          </div>
+
+          <div class="grid-item ma-block">
+            <h4>MULTI_ATK</h4>
+            <p><strong>1 QA = 1.5 TA = 3 DA = 3% MORE TP GAINED</strong></p>
+            <p>1 DA = 1 MORE ATTACK PER 100<br/>1 TA = 2 MORE ATTACKS PER 100<br/>1 QA = 3 MORE ATTACKS PER 100</p>
+            <div class="note">
+              <strong>PRIORITY:</strong> (FOLLOW-UP) &gt; QA &gt; TA &gt; DA &gt; (OAT) &gt; (ZANSHIN)
+            </div>
+          </div>
+
+          <div class="grid-item relationship-block">
+            <h4>RELATIONSHIP</h4>
+            <p><strong>1 STP = 1 DA = 1% MORE TP GAINED</strong><br/>
+            <strong>1 QA = 1.5 TA = 3 DA = 3 STP = 3% MORE TP GAINED</strong></p>
+          </div>
+        </div>
+
+        <hr />
+
+        <h3>[ BASIC: Some Formulas, For Ya ]</h3>
+
+        <div class="data-grid">
+          <div class="grid-item stp-block">
+            <h4>STORE_TP</h4>
+            <div class="image-container">
+              <img src="/images/STPformulacorrect.jpeg" alt="STP Formula" />
+            </div>
+            <p>THE FORMULA LOOKS MORE COMPLICATED THAN IT IS.</p>
+            <p>THE FRACTION ON THE RIGHT SIDE WITHOUT STP IS 100/100. THIS IS 1. 110/100 IS 1.1, 150/100 IS 1.5, ETC.</p>
+            <p>SO, SPEAKING VERY BASICALLY, FOR EVERY 1 POINT OF STP YOU ADD, YOU ARE GAINING 1% MORE TP. THEREFORE, <strong>FOR BASIC GEARING PURPOSES</strong>, SINCE 1 DA = 1 STP = 1% MORE TP GAINED, DA = STP.</p>
+            <div class="note">
+              <strong>NOTE:</strong> THE FORMULA TO DECIDE YOUR TP PER HIT HAS A FLOOR() FUNCTION IN IT. THIS MEANS IT ALWAYS ROUNDS DOWN. THIS WILL ONLY EVER BE AT MOST A 0.99 TP/HIT REDUCTION DUE TO HOW FLOORING WORKS.<br/><br/>THIS IS MORE IMPACTFUL FOR FASTER WEAPONS THAT HAVE LOWER TP/HIT, BUT IT IS STILL <strong>VERY MINOR AND ONLY WORTH WORKING AROUND IN EXTREME MIN-MAX SITUATIONS.</strong>
+            </div>
+          </div>
+
+          <div class="grid-item ma-block">
+            <h4>MULTI_ATK</h4>
+            <p>DUE TO HOW PROC PRIORITY WORKS, A NUMBER OF HIGHER PRIORITY MULTIATTACK TYPES WILL EAT UP CHANCES FOR LOWER PRIORITY MULTIATTACK. SEE: <a href="https://www.bg-wiki.com/ffxi/Category:Multi-Attack">MULTI-ATTACK</a>.</p>
+            <p>VERY GENERAL RULE OF THUMB: EXPECT X% LESS EFFECTIVENESS FOR EVERY X% OF THE HIGHER MULTIATTACK TYPES.</p>
+            <p>E.G. IF YOU HAVE 10 QA, YOUR 10 TA IS 90% AS EFFECTIVE, AND YOUR 10 DA IS 80% AS EFFECTIVE (10 QA AND 10 TA)</p>
+            <p><strong>(NOTE: ACTUAL AMOUNT IS SLIGHTLY DIFFERENT)</strong></p>
+          </div>
+
+          <div class="grid-item relationship-block">
+            <h4>RELATIONSHIP</h4>
+            <p>HAVING STORE TP INCREASES THE BENEFITS OF EACH MULTIATTACK PROC.<br/>INTERNAL RATIOS OF MULTIATTACK NEVER CHANGE (IT WILL ALWAYS BE 1QA:1.5TA:3DA), BUT THE OVERALL TP GAINS INCREASE.</p>
+            <p><strong>10 STP = 10% MORE TP GAINED</strong><br/>
+            <strong>10 STP AND 1 QA = 1.5 TA = 3 DA = 3.3% MORE TP GAINED</strong></p>
+            <div class="note">
+              <strong>TL;DR:</strong> STP AND MULTIATTACK HAVE A SYNERGISTIC RELATIONSHIP. HAVING A MIX OF BOTH WILL GIVE MORE BENEFIT.
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <h3>[ INTERMEDIATE: Nuance Never Hurt ]</h3>
+
+        <div class="data-grid">
+          <div class="grid-item stp-block">
+            <h4>STORE_TP</h4>
+            <p>Info Goes Here</p>
+            <div class="note">
+              <strong>NOTE:</strong> Info Goes Here
+            </div>
+          </div>
+
+          <div class="grid-item ma-block">
+            <h4>MULTI_ATK</h4>
+            <p>FOR THE MOST COMMON TYPES (QA, TA, DA), THE FORMULA WORKS AS SUCH:</p>
+            <div class="image-container">
+              <img src="/images/MAFormula.jpeg" alt="MA Formula" />
+            </div>
+            <p>EACH TIME A HIGHER PRIORITY MULTIATTACK PROCS, IT REMOVES THOSE ATTACKS FROM THE POOL FOR REMAINING MULTIATTACK PROCS.</p>
+            <p>E.G. IF YOU HAVE 10 QA AND 10 TA AND 10 DA, OF 100 ATTACKS YOU WILL GET A QA. THEN TA HAS 90 ATTACKS LEFT, PROCCING 10% OF THOSE (9 TA). THEN DA HAS 81 ATTACKS LEFT, PROCCING 10% OF THOSE (8 DA). IN THE FORMULA THAT WOULD LOOK LIKE:</p>
+            <p>EARev = [.1 × 3] + [(1 - .1) × (.1 × 2)] + [(1 - .1) × (1 - .1) × (.1 × 1)] = 1.561</p>
+            <p><strong>THIS MEANS THAT WITH 10 OF EACH QA/TA/DA YOU WILL GAIN 56.1% MORE ATTACKS INSTEAD OF THE 60 YOU WOULD EXPECT</strong></p>
+            <div class="note">
+              <strong>NOTE:</strong> Info Goes Here
+            </div>
+          </div>
+
+          <div class="grid-item relationship-block">
+            <h4>RELATIONSHIP</h4>
+            <p><strong>1 STP = 1 DA = 1% TP GAIN</strong><br/>
+            <strong>1 QA = 1.5 TA = 3 DA = 3 STP = 3% TP GAIN</strong><br/>
+            WITH 10 STP ALREADY, 1 QA = 1.5 TA = 3 DA = 3.3% TP GAIN</p>
+            <p><strong>BECAUSE A SQUARE NUMBER WILL RESULT IN THE LARGEST OUTCOME, YOU WANT TO TRY TO HAVE YOUR TP GAINS FROM STP EQUAL TO THOSE FROM MULTIATTACK, IF IT WILL BRING A LOWER VALUE UP. (E.G. YOU HAVE 40 STP AND 30 DA AND HAVE A CHOICE OF ADDING 10 STP OR 10 DA, YOU WILL GAIN MORE TP IF YOU ADD 10 DA.</strong></p>
+            <p>(1+1.4)*(1+1.4)=5.76<br/>(1+1.5)*(1+1.3)=5.75</p>
+            <div class="note">
+              THE HIGHER THESE VALUES GO, THE MORE OF A DIFFERENCE THERE WILL BE. HOWEVER, AS YOU CAN SEE, UNLESS WE ARE LOOKING AT VERY HIGH VALUES OF BOTH, THE DIFFERENCE IS FAIRLY MINOR.<br/><br/>THIS "EQUAL" VALUE IS STILL USING THE KEY RATIO OF 1QA=1.5TA=3DA=3STP. SO SIMILARLY TO THE ABOVE EXAMPLE, IF YOU HAD 40 QA AND 30 STP AND HAD THE CHOICE OF ADDING 10 QA OR 10 STP, YOU WOULD GAIN MORE FROM THE QA (AS 10 QA IS CLOSER TO 30 STP)
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <h3>[ ADVANCED: Math Math Math ]</h3>
+
+        <div class="data-grid">
+          <div class="grid-item stp-block">
+            <h4>STORE_TP</h4>
+            <p>Info Goes Here</p>
+            <div class="note">
+              <strong>NOTE:</strong> Info Goes Here
+            </div>
+          </div>
+
+          <div class="grid-item ma-block">
+            <h4>MULTI_ATK</h4>
+            <p>Info Goes Here</p>
+            <div class="note">
+              <strong>NOTE:</strong> Info Goes Here
+            </div>
+          </div>
+
+          <div class="grid-item relationship-block">
+            <h4>RELATIONSHIP</h4>
+            <p><strong>1 STP = 1 DA</strong><br/>
+            <strong>1 QA = 1.5 TA = 3 DA = 3 STP</strong></p>
+            <div class="note">
+              <strong>TL;DR:</strong> Info Goes Here
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: right; margin-top: 10px;">
+          <a href="#TOP">^ RETURN TO TOP</a>
+        </div>
+
+        <br/><br/>
+
+        <div id="DELAY_RED" class="module-header">
+          <h1>Delay Reduction</h1>
+          <h2>&gt;&gt; MODULE: DUAL_WIELD &amp; MARTIAL_ARTS</h2>
+        </div>
+
+        <h3>[ MECHANICS OVERVIEW ]</h3>
+
+        <div class="data-grid">
+          <div class="grid-item dw-block">
+            <h4>DUAL_WIELD</h4>
+            <p>Info Goes Here</p>
+            <div class="note">
+              <strong>NOTE:</strong> Info Goes Here
+            </div>
+          </div>
+
+          <div class="grid-item ma-block">
+            <h4>MARTIAL_ARTS</h4>
+            <p>Info Goes Here</p>
+            <div class="note">
+              <strong>NOTE:</strong> Info Goes Here
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: right; margin-top: 10px;">
+          <a href="#TOP">^ RETURN TO TOP</a>
+        </div>
+
+      </div>
+    </main>
   </div>
-
-  <div class="grid-item ma-block">
-    <h4>MULTI_ATK</h4>
-    <p><strong>1 QA = 1.5 TA = 3 DA = 3% MORE TP GAINED</strong></p>
-    <p>1 DA = 1 MORE ATTACK PER 100<br/>1 TA = 2 MORE ATTACKS PER 100<br/>1 QA = 3 MORE ATTACKS PER 100</p>
-    <div class="note">
-      <strong>PRIORITY:</strong> (FOLLOW-UP) &gt; QA &gt; TA &gt; DA &gt; (OAT) &gt; (ZANSHIN)
-    </div>
-  </div>
-
-  <div class="grid-item relationship-block">
-    <h4>RELATIONSHIP</h4>
-    <p><strong>1 STP = 1 DA = 1% MORE TP GAINED</strong><br/>
-    <strong>1 QA = 1.5 TA = 3 DA = 3 STP = 3% MORE TP GAINED</strong></p>
-  </div>
-
-</div>
-
-<hr />
-
-<h3>[ BASIC: Some Formulas, For Ya ]</h3>
-
-<div class="data-grid">
-
-  <div class="grid-item stp-block">
-    <h4>STORE_TP</h4>
-    <div class="image-container">
-      <img src="/images/STPformulacorrect.jpeg" alt="STP Formula" />
-    </div>
-    <p>THE FORMULA LOOKS MORE COMPLICATED THAN IT IS.</p>
-    <p>THE FRACTION ON THE RIGHT SIDE WITHOUT STP IS 100/100. THIS IS 1. 110/100 IS 1.1, 150/100 IS 1.5, ETC.</p>
-    <p>SO, SPEAKING VERY BASICALLY, FOR EVERY 1 POINT OF STP YOU ADD, YOU ARE GAINING 1% MORE TP. THEREFORE, <strong>FOR BASIC GEARING PURPOSES</strong>, SINCE 1 DA = 1 STP = 1% MORE TP GAINED, DA = STP.</p>
-    <div class="note">
-      <strong>NOTE:</strong> THE FORMULA TO DECIDE YOUR TP PER HIT HAS A FLOOR() FUNCTION IN IT. THIS MEANS IT ALWAYS ROUNDS DOWN. THIS WILL ONLY EVER BE AT MOST A 0.99 TP/HIT REDUCTION DUE TO HOW FLOORING WORKS.<br/><br/>THIS IS MORE IMPACTFUL FOR FASTER WEAPONS THAT HAVE LOWER TP/HIT, BUT IT IS STILL <strong>VERY MINOR AND ONLY WORTH WORKING AROUND IN EXTREME MIN-MAX SITUATIONS.</strong>
-    </div>
-  </div>
-
-  <div class="grid-item ma-block">
-    <h4>MULTI_ATK</h4>
-    <p>DUE TO HOW PROC PRIORITY WORKS, A NUMBER OF HIGHER PRIORITY MULTIATTACK TYPES WILL EAT UP CHANCES FOR LOWER PRIORITY MULTIATTACK. SEE: <a href="https://www.bg-wiki.com/ffxi/Category:Multi-Attack">MULTI-ATTACK</a>.</p>
-    <p>VERY GENERAL RULE OF THUMB: EXPECT X% LESS EFFECTIVENESS FOR EVERY X% OF THE HIGHER MULTIATTACK TYPES.</p>
-    <p>E.G. IF YOU HAVE 10 QA, YOUR 10 TA IS 90% AS EFFECTIVE, AND YOUR 10 DA IS 80% AS EFFECTIVE (10 QA AND 10 TA)</p>
-    <p><strong>(NOTE: ACTUAL AMOUNT IS SLIGHTLY DIFFERENT)</strong></p>
-  </div>
-
-  <div class="grid-item relationship-block">
-    <h4>RELATIONSHIP</h4>
-    <p>HAVING STORE TP INCREASES THE BENEFITS OF EACH MULTIATTACK PROC.<br/>INTERNAL RATIOS OF MULTIATTACK NEVER CHANGE (IT WILL ALWAYS BE 1QA:1.5TA:3DA), BUT THE OVERALL TP GAINS INCREASE.</p>
-    <p><strong>10 STP = 10% MORE TP GAINED</strong><br/>
-    <strong>10 STP AND 1 QA = 1.5 TA = 3 DA = 3.3% MORE TP GAINED</strong></p>
-    <div class="note" style="border-top-color: #00bcd4;">
-      <strong>TL;DR:</strong> STP AND MULTIATTACK HAVE A SYNERGISTIC RELATIONSHIP. HAVING A MIX OF BOTH WILL GIVE MORE BENEFIT.
-    </div>
-  </div>
-
-</div>
-
-<hr />
-
-<h3>[ INTERMEDIATE: Nuance Never Hurt ]</h3>
-
-<div class="data-grid">
-
-  <div class="grid-item stp-block">
-    <h4>STORE_TP</h4>
-    <p>Info Goes Here</p>
-    <div class="note">
-      <strong>NOTE:</strong> Info Goes Here
-    </div>
-  </div>
-
-  <div class="grid-item ma-block">
-    <h4>MULTI_ATK</h4>
-    <p>FOR THE MOST COMMON TYPES (QA, TA, DA), THE FORMULA WORKS AS SUCH:</p>
-    <div class="image-container">
-      <img src="/images/MAFormula.jpeg" alt="MA Formula" />
-    </div>
-    <p>EACH TIME A HIGHER PRIORITY MULTIATTACK PROCS, IT REMOVES THOSE ATTACKS FROM THE POOL FOR REMAINING MULTIATTACK PROCS.</p>
-    <p>E.G. IF YOU HAVE 10 QA AND 10 TA AND 10 DA, OF 100 ATTACKS YOU WILL GET A QA. THEN TA HAS 90 ATTACKS LEFT, PROCCING 10% OF THOSE (9 TA). THEN DA HAS 81 ATTACKS LEFT, PROCCING 10% OF THOSE (8 DA). IN THE FORMULA THAT WOULD LOOK LIKE:</p>
-    <p>EARev = [.1 × 3] + [(1 - .1) × (.1 × 2)] + [(1 - .1) × (1 - .1) × (.1 × 1)] = 1.561</p>
-    <p><strong>THIS MEANS THAT WITH 10 OF EACH QA/TA/DA YOU WILL GAIN 56.1% MORE ATTACKS INSTEAD OF THE 60 YOU WOULD EXPECT</strong></p>
-    <div class="note">
-      <strong>NOTE:</strong> Info Goes Here
-    </div>
-  </div>
-
-  <div class="grid-item relationship-block">
-    <h4>RELATIONSHIP</h4>
-    <p><strong>1 STP = 1 DA = 1% TP GAIN</strong><br/>
-    <strong>1 QA = 1.5 TA = 3 DA = 3 STP = 3% TP GAIN</strong><br/>
-    WITH 10 STP ALREADY, 1 QA = 1.5 TA = 3 DA = 3.3% TP GAIN</p>
-    <p><strong>BECAUSE A SQUARE NUMBER WILL RESULT IN THE LARGEST OUTCOME, YOU WANT TO TRY TO HAVE YOUR TP GAINS FROM STP EQUAL TO THOSE FROM MULTIATTACK, IF IT WILL BRING A LOWER VALUE UP. (E.G. YOU HAVE 40 STP AND 30 DA AND HAVE A CHOICE OF ADDING 10 STP OR 10 DA, YOU WILL GAIN MORE TP IF YOU ADD 10 DA.</strong></p>
-    <p>(1+1.4)*(1+1.4)=5.76<br/>(1+1.5)*(1+1.3)=5.75</p>
-    <div class="note" style="border-top-color: #00bcd4;">
-      THE HIGHER THESE VALUES GO, THE MORE OF A DIFFERENCE THERE WILL BE. HOWEVER, AS YOU CAN SEE, UNLESS WE ARE LOOKING AT VERY HIGH VALUES OF BOTH, THE DIFFERENCE IS FAIRLY MINOR.<br/><br/>THIS "EQUAL" VALUE IS STILL USING THE KEY RATIO OF 1QA=1.5TA=3DA=3STP. SO SIMILARLY TO THE ABOVE EXAMPLE, IF YOU HAD 40 QA AND 30 STP AND HAD THE CHOICE OF ADDING 10 QA OR 10 STP, YOU WOULD GAIN MORE FROM THE QA (AS 10 QA IS CLOSER TO 30 STP)
-    </div>
-  </div>
-
-</div>
-
-<hr />
-
-<h3>[ ADVANCED: Math Math Math ]</h3>
-
-<div class="data-grid">
-
-  <div class="grid-item stp-block">
-    <h4>STORE_TP</h4>
-    <p>Info Goes Here</p>
-    <div class="note">
-      <strong>NOTE:</strong> Info Goes Here
-    </div>
-  </div>
-
-  <div class="grid-item ma-block">
-    <h4>MULTI_ATK</h4>
-    <p>Info Goes Here</p>
-    <div class="note">
-      <strong>NOTE:</strong> Info Goes Here
-    </div>
-  </div>
-
-  <div class="grid-item relationship-block">
-    <h4>RELATIONSHIP</h4>
-    <p><strong>1 STP = 1 DA</strong><br/>
-    <strong>1 QA = 1.5 TA = 3 DA = 3 STP</strong></p>
-    <div class="note" style="border-top-color: #00bcd4;">
-      <strong>TL;DR:</strong> Info Goes Here
-    </div>
-  </div>
-
-</div>
-
-<div style="text-align: right; margin-top: 10px;">
-  <a href="#TOP">^ RETURN TO TOP</a>
-</div>
-
-<br/><br/>
-
-<div id="DELAY_RED" class="module-header">
-  <h1>Delay Reduction</h1>
-  <h2>&gt;&gt; MODULE: DUAL_WIELD &amp; MARTIAL_ARTS</h2>
-</div>
-
-<h3>[ MECHANICS OVERVIEW ]</h3>
-
-<div class="data-grid">
-
-  <div class="grid-item dw-block">
-    <h4>DUAL_WIELD</h4>
-    <p>Info Goes Here</p>
-    <div class="note">
-      <strong>NOTE:</strong> Info Goes Here
-    </div>
-  </div>
-
-  <div class="grid-item ma-block">
-    <h4>MARTIAL_ARTS</h4>
-    <p>Info Goes Here</p>
-    <div class="note">
-      <strong>NOTE:</strong> Info Goes Here
-    </div>
-  </div>
-
-</div>
-
-<div style="text-align: right; margin-top: 10px;">
-  <a href="#TOP">^ RETURN TO TOP</a>
-</div>
-
-</div>
 
 </body>
 </html>

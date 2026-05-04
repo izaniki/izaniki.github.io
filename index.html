@@ -8,53 +8,51 @@
 </head>
 <body>
 
-  <div class="ffxi-container">
+  <input type="checkbox" id="nav-toggle" class="menu-checkbox">
+  <label for="nav-toggle" class="menu-btn">[ TOGGLE SYSTEM MENU ]</label>
+
+  <div class="layout-wrapper">
     
-    <header class="ffxi-header">
-      <h1>FFXI Data</h1>
-      <p class="subtitle">Collection of formulas, calculators, and other data from the Not As Critically Acclaimed MMORPG FFXI</p>
-    </header>
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li class="has-submenu">
+            <a href="index.html">> Home</a>
+            <a href="data_list.html">> Data List</a>
+            <ul class="sub-menu">
+              <li><a href="store_tp.html">- Store TP</a></li>
+              <li><a href="delay_reduction.html">- Delay Reduction</a></li>
+            </ul>
+          </li>
+          <li><a href="ffxi_formulas.html">> FFXI Formulas</a></li>
+          <li><a href="data_calculators.html">> Data Calculators</a></li>
+          <li><a href="item_database.html">> Item Database</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-    <nav class="ffxi-menu">
-  <ul>
-    <li class="has-submenu">
-      <a href="index.html">Home</a>
-      <a href="data_list.html">Data List</a>
-      <ul class="sub-menu">
-        <li><a href="store_tp.html">Store TP</a></li>
-        <li><a href="delay_reduction.html">Delay Reduction</a></li>
-      </ul>
-    </li>
-    <li><a href="ffxi_formulas.html">FFXI Formulas</a></li>
-    <li><a href="data_calculators.html">Data Calculators</a></li>
-    <li><a href="item_database.html">Item Database</a></li>
-  </ul>
-</nav>
+    <main class="main-content">
+      <header>
+        <h1>FFXI Data Archive</h1>
+        <p>Collection of formulas, calculators, and other data from the Not As Critically Acclaimed MMORPG FFXI</p>
+      </header>
 
-    <main class="ffxi-dialogue-box">
-        <div class="dialogue-content">
-            
-            <div class="top-right-leaf"></div>
-            <div class="bottom-right-leaf"></div>
+      <hr />
 
-            <h2>Welcome, Adventurer</h2>
-            <p>This is a custom CSS layout inspired by the UI of Final Fantasy XI.</p>
-            
-            <div class="system-message">
-              System: Welcome to your new GitHub Page!
-            </div>
-            
-            <div style="margin-top: 25px;">
-              <button class="ffxi-btn">Accept</button>
-              <button class="ffxi-btn cancel">Decline</button>
-            </div>
+      <h2>Welcome, Adventurer</h2>
+      <p>System interface updated to terminal aesthetics.</p>
+      
+      <blockquote>
+        System: Welcome to your new GitHub Page! Directory structure initialized.
+      </blockquote>
+      
+      <div style="margin-top: 25px;">
+        <button>Accept</button>
+        <button>Decline</button>
+      </div>
+    </main>
 
-        </div> </main>
-    
   </div>
 
 </body>
 </html>
-
-
-
