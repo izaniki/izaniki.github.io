@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FFXI Data Archive</title>
+  <link rel="stylesheet" href="terminal.css">
+  <style>
+    /* Minimal inline CSS just for the tab layout, assuming terminal.css handles colors/fonts */
+    .tab-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .tab-btn {
+      cursor: pointer;
+      opacity: 0.6;
+    }
+    .tab-btn.active {
+      opacity: 1;
+      font-weight: bold;
+      border-bottom: 2px solid; /* Highlights the active tab */
+    }
+    .tab-content {
+      display: none; /* Hides all tabs by default */
+      padding: 15px;
+      border: 1px dashed; /* Fits the terminal vibe */
+    }
+    .tab-content.active {
+      display: block; /* Shows only the active tab */
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .calc-grid label {
+      display: flex;
+      flex-direction: column;
+    }
+    .calc-result {
+      margin-top: 20px;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="checkbox" id="nav-toggle" class="menu-checkbox">
+
+  <div class="layout-wrapper">
+    
+    <aside id="global-sidebar" class="sidebar"></aside>
+
+    <main class="main-content">
+      <label for="nav-toggle" class="menu-btn">[☰]</label>
+      
+      <div class="terminal-wrapper">
+        <header>
+          <h1>FFXI Data Archive</h1>
+          <p>Collection of formulas, calculators, and other data from the Not As Critically Acclaimed MMORPG FFXI</p>
+        </header>
+
+        <hr />
+
+        <div class="tab-buttons">
+          <button class="tab-btn active" onclick="openTab('calc-tpgain')">[ TP Gain ]</button>
+          <button class="tab-btn" onclick="openTab('calc-ttw')">[ Time to WS ]</button>
+          <button class="tab-btn" onclick="openTab('calc-ma')">[ Martial Arts ]</button>
+        </div>
+
+    
+          <div id="calc-tpgain" class="tab-content active">
+          <h2>TP Gain Calculator</h2>
+          <p>Calculate dynamic multi-attack returns factoring in Zanshin and OAT cannibalization.</p>
+          
+          <div class="settings-box"; style="margin-bottom: 25px; position: relative;">
+              <label style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px;">
+                <span>Hit Rate:</span>
+                <span style="color: #00E5C0;"><span id="hit-rate-display">95</span>%</span>
+              </label>
+              <input type="range" id="hit-rate" min="20" max="99" value="95" style="width: 100%; cursor: pointer;">
+              <label style="position: absolute; right: 0; bottom: -22px; font-size: 0.85em; cursor: pointer; color: #aaa;">
+                <input type="checkbox" id="auto-cap"> Auto Cap
+              </label>
+            </div>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
+              <span style="font-weight: bold;">Weapon:</span>
+              <label><input type="radio" name="weap_type" value="2h" checked> 2-Hand</label>
+              <label><input type="radio" name="weap_type" value="1h"> 1-Hand</label>
+              <label><input type="radio" name="weap_type" value="dw"> Dual Wield</label>
+              <label><input type="radio" name="weap_type" value="h2h"> H2H</label>
+            </div>
+          </div>
+          <div class="calc-grid">
+            <label>QA % <input type="number" id="qa" value="0" min="0" max="100"></label>
+            <label>TA % <input type="number" id="ta" value="0" min="0" max="100"></label>
+            <label>DA % <input type="number" id="da" value="0" min="0" max="100"></label>
+            <label>Store TP <input type="number" id="stp" value="0"></label>
+            <label>Zanshin % <input type="number" id="zan" value="0" min="0" max="100"></label>
+            <label>Zanshin: OAT % <input type="number" id="zan_oat" value="0" min="0" max="100"></label>
+          </div>
+
+          <hr />
+          <div class="calc-result">
+            Total TP Gain: <span id="result" style="color: #00E5C0;">+0.00%</span>
+          </div>
+          
+          <div id="tpgain-breakdown" style="margin-top: 15px; font-family: monospace; font-size: 0.9em; background: rgba(0,0,0,0.3); padding: 10px; border: 1px solid #444;">
+    <div style="margin-bottom: 5px; color: #aaa;">Breakdown: +Actual% [+Base%, -Losses%] [+STP Bonus%]</div>
+              <div id="bd-qa" style="color: #56B4E9; display: none;">QA: </div>
+              <div id="bd-ta" style="color: #E69F00; display: none;">TA: </div>
+              <div id="bd-da" style="color: #F0E442; display: none;">DA: </div>
+              <div id="bd-zan" style="color: #CC79A7; display: none;">Zan: </div>
+              <div id="bd-stp" style="color: #DDB8FF;">STP Base: <span id="val-stp-base">+0%</span></div>
+          </div>
+          <div id="tpgain-cumulative" style="margin-top: 15px; font-family: monospace; font-size: 0.9em; background: rgba(0,0,0,0.3); padding: 10px; border: 1px solid #444;">
+              <div style="margin-bottom: 5px; color: #aaa;">Cumulative Net Value: +Actual% [-Cannibalized From Others]</div>
+              <div id="cum-qa" style="display: none;"></div>
+              <div id="cum-ta" style="display: none;"></div>
+              <div id="cum-da" style="display: none;"></div>
+              <div id="cum-zan" style="display: none;"></div>
+          </div>
+
+        <div id="calc-ttw" class="tab-content">
+          <h2>Time to WS</h2>
+          <p>System interface updating... Calculator coming soon.</p>
+        </div>
+
+        <div id="calc-ma" class="tab-content">
+          <h2>Martial Arts / Delay</h2>
+          <p>System interface updating... Calculator coming soon.</p>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+  
+ <script src="sidebar.js"></script>
+  <script src="themes.js"></script>
+  
+  <script src="tabs.js"></script> 
+  
+  <script src="calc-tpgain.js"></script>
+  <script src="calc-ttw.js"></script>
+  <script src="calc-martialarts.js"></script>
+</body>
+</html>

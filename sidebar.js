@@ -4,22 +4,24 @@ const sidebarHTML = `
   </a>
   <nav>
     <ul>
-      <li><a href="index.html">> Home</a></li>
+      <li><a href="index.html">>> Home</a></li>
       <li class="has-submenu">
-        <a href="data_list.html">> Data List</a>
+        <a href="data_list.html">> Game Mechanics</a>
         <ul class="sub-menu">
-          <li><a href="store_tp.html">- Store TP</a></li>
+          <li><a href="store_tp.html">- TP Generation</a></li>
+          <li><a href="multiattack.html">- Multi-attack</a></li>
           <li><a href="delay_reduction.html">- Delay Reduction</a></li>
+          
         </ul>
       </li>
       <li><a href="ffxi_formulas.html">> FFXI Formulas</a></li>
-      <li><a href="data_calculators.html">> Data Calculators</a></li>
+      <li><a href="calculators.html">> Data Calculators</a></li>
       <li><a href="item_database.html">> Item Database</a></li>
       <li>
         <div class="theme-switcher" style="margin-top: 30px; border-top: 1px dashed var(--accent); padding-top: 15px;">
-          <label for="theme-select" style="font-size: 0.8em; display: block; margin-bottom: 5px;">> SELECT THEME</label>
+          <label for="theme-select" style="font-size: 0.7em; display: block; margin-bottom: 5px;">> SELECT THEME</label>
           <select id="theme-select" style="margin-bottom: 15px;"></select>
-          <label for="font-select" style="font-size: 0.8em; display: block; margin-bottom: 5px;">> SELECT FONT</label>
+          <label for="font-select" style="font-size: 0.7em; display: block; margin-bottom: 5px;">> SELECT FONT</label>
           <select id="font-select"></select>
         </div>
       </li>

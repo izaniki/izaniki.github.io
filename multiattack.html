@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FFXI Data Archive</title>
+  <link rel="stylesheet" href="terminal.css">
+</head>
+<body>
+
+  <input type="checkbox" id="nav-toggle" class="menu-checkbox">
+
+  <div class="layout-wrapper">
+    
+    <aside id="global-sidebar" class="sidebar"></aside>
+
+    <main class="main-content">
+      <label for="nav-toggle" class="menu-btn">[☰]</label>
+      
+      <div class="terminal-wrapper">
+        <header>
+          <h1>Multi-Attack Functionality</h1>
+        </header><hr>
+        <body><br>Stats that can increase the amount of attacks in round. This has a universal cap of 8 attacks in a round. Most forms of multi-attack that appears on gear can also proc on weapon skills which is especially strong for fTP transferring WS.
+            <br> <br></body>
+        <hr>
+        <header><h3>Proc Priority Chart</h3></header>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center; width: 5%;">Priority</th>
+              <th style="text-align: center; width: 25%;">Type</th>
+              <th style="text-align: center; width: 4%;">Added Hits</th>
+              <th style="text-align: center; width: 4%;">WS Proc</th>
+              <th style="text-align: center; width: 55%;">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="9" style="position: relative; padding: 0; border-bottom: 2px solid var(--foreground);">
+                <div class="priority-arrow"></div>
+              <td style="text-align: center;">Superior 4/5 Follow-up Attack<br><br>Raetic Weapons<p style="font-size: 0.6rem;"> Virtue Stone Weapons</p></td>
+              <td style="text-align: center;">+1</td>
+              <td style="text-align: center;">✘</td>
+              <td style="text-align: center;">Can proc on multiattack hits from lower priorities. <br><b>Can proc once</b> in an attack round. <br>Respects <b>8 attacks in a round cap.</b></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">Quadruple Attack</td>
+              <td style="text-align: center;">+3</td>
+              <td style="text-align: center;">◯</td>
+              <td style="text-align: center;"></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">Triple Attack</td>
+              <td style="text-align: center;">+2</td>
+              <td style="text-align: center;">◯</td>
+              <td style="text-align: center;"></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">Double Attack</td>
+              <td style="text-align: center;">+1</td>
+              <td style="text-align: center;">◯</td>
+              <td style="text-align: center;"></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">Occasionally Attacks X Times</td>
+              <td style="text-align: center;">+1~7</td>
+              <td style="text-align: center;">△</td>
+              <td style="text-align: center;">WS procs <b>only</b> when this stat is from Mythic Aftermath. <br><br>Ranges from <b>OA2</b>(two times) to <b>OA8</b>(eight times).</td>
+            </tr>
+            <tr>
+                
+                <td colspan="5" class="table-divider">
+                ↓ Conditional Procs - Priority Under Testing ↓
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">Zanshin Retry</td>
+              <td style="text-align: center;">+1</td>
+              <td style="text-align: center;">✘</td>
+              <td style="text-align: center;">Can <b>only</b> occur <b>on attack misses</b>. Rate% = Zanshin. Caps at 100% proc on misses (accuracy caps: 95% for 2-hand, 99% for 1-hand; effectively raising melee hit rate to 99.75% for 2-hand, 99.99% for 1-hand).<br>Does not work with H2H or DW.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">Hasso Double Attack</td>
+              <td style="text-align: center;">+1</td>
+              <td style="text-align: center;">✘</td>
+              <td style="text-align: center;">Can only occur when using Hasso on a SAM main and when an attack connects. Rate = (Zanshin ÷ 4). This caps at unmastered:25%, mastered:35%. <br><b>Job gifts ONLY give a raised cap and not more proc chance.</b></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">Zanshin: OA2</td>
+              <td style="text-align: center;">+1</td>
+              <td style="text-align: center;">✘</td>
+              <td style="text-align: center;">Can only occur when using gear that grants it. Has the stated % chance to proc <b>on any Zanshin proc</b> (miss OR extra attack).<br> Ex: Ryuo Sune-ate (10/HQ 11%).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  <div style="text-align: right; margin-top: 10px;">
+          <a href="#TOP">↑TOP↑</a>
+        </div>
+  <script src="sidebar.js"></script>
+  <script src="themes.js"></script>
+</body>
+</html>
